@@ -1,3 +1,3 @@
-# Methods
+# 算法实现 {#methods}
 
 We describe our methods in this chapter.
