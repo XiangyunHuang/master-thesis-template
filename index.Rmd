@@ -27,11 +27,11 @@ description: "This is a minimal example of using the bookdown package to write a
 - 独创性声明
 - 中英文摘要
 
-或者目录前的单独制作成pdf，因为它们与后面的内容毫无关系，固定下来后，作为pdf文件合并
+或者目录前的部分单独制作成pdf，因为它们与后面的内容毫无关系，固定下来后，作为pdf文件合并
 
 在 `latex/after_body` 添加
 
 - 致谢
 - 作者介绍
 
-
+也可以同上的做法
