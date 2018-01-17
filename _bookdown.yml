@@ -1,5 +1,10 @@
 book_filename: "master-thesis-template"
 delete_merged_file: true
+clean: [packages.bib, bookdown.bbl]
 language:
+  label:
+    fig: "图 "
+    tab: "表 "
   ui:
-    chapter_name: "Chapter "
+    edit: "编辑"
+    chapter_name: ["第 ", " 章"]
