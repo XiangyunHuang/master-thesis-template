@@ -13,8 +13,6 @@ description: "This is a minimal example of using the bookdown package to write a
 
 # 模板使用说明
 
-## bookdown
-
 本模板基于 bookdown [@bookdown2016CRC] 制作，得益于 pandoc^[<https://www.pandoc.org>]
 
 - 设置文武线
@@ -23,11 +21,17 @@ description: "This is a minimal example of using the bookdown package to write a
 - 无序号的章节
 
 
-添加
+在 `latex/before_body`添加
 
 - 封面 
-
 - 独创性声明
-
 - 中英文摘要
+
+或者目录前的单独制作成pdf，因为它们与后面的内容毫无关系，固定下来后，作为pdf文件合并
+
+在 `latex/after_body` 添加
+
+- 致谢
+- 作者介绍
+
 
