@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">挖掘机</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">bookdown强力驱动</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published by RStudio with bookdown</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
@@ -18,7 +18,7 @@ bookdown::pdf_book:
   citation_package: natbib
   pandoc_args: --top-level-division=chapter
   toc_depth: 3
-  toc_unnumbered: no
+  toc_unnumbered: yes
   toc_appendix: yes
   base_format: rticles::ctex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
