@@ -1,35 +1,25 @@
-Package: advr
-Title: Advanced R
+Package: cumtb
+Title: cumtb thesis template
 Version: 1.0.0.9000
 Authors@R: c(
-  person("Hadley", "Wickham", , "hadley@rstudio.com", c("aut", "cre"))
+  person("Xiangyun", "Huang", , "xiangyunfaith@outlook.com", c("aut", "cre"))
   )
 URL: https://github.com/XiangyunHuang/master-thesis-template
 Depends: 
     R (>= 3.1.0)
 Imports: 
     bookdown,
-    dbplyr,
-    emo,
-    ggplot2,
     inline,
     knitr,
-    lineprof,
-    lobstr,
-    memoise,
-    microbenchmark,
-    png,
-    pryr,
+    PrevMap,
+    sf,
+    sp,
+    geoRglm,
     Rcpp,
     rlang,
-    rmarkdown,
-    RSQLite,
-    sloop,
     stringr,
-    zeallot
+    rticles
 Remotes: 
-    hadley/emo,
-    hadley/lineprof,
-    hadley/lobstr,
-    hadley/sloop,
-    tidyverse/rlang
+    yihui/tinytex,
+    rstudio/rmarkdown,
+    tidyverse/ggplot2
