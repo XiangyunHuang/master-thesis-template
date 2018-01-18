@@ -4,7 +4,7 @@ author: "采煤专业"
 date: "2018年6月12日"
 site: bookdown::bookdown_site
 documentclass: ctexbook
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib, packages.bib, articles.bib]
 biblio-style: apalike
 geometry: [a4paper, tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
 link-citations: yes
@@ -66,5 +66,17 @@ docker 内完整的 R 包列表如下：
 list.files(.libPaths())
 ```
 
+启动 docker 程序
+
+![启动docker](figures/start_docker.png)
+
+拉取镜像
+
+![拉取镜像](figures/pull_image.png)
 
 
+
+![镜像准备完毕](figures/pull_down.png)
+
+
+![travis-ci](figures/travis-ci.png)
