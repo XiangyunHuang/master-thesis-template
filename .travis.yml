@@ -12,12 +12,11 @@ before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
-- tlmgr install index ctex
 
 script:
 - Rscript -e 'bookdown::render_book("index.Rmd")'
 
 deploy:
   provider: script
-  script: netlify deploy ~/_book
+  script: netlify deploy _book
   skip_cleanup: true
