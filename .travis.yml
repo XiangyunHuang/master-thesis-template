@@ -14,7 +14,7 @@ before_install:
 - npm install netlify-cli -g
 
 script:
-- Rscript -e 'rmarkdown::render_site(encoding = 'UTF-8')'
+- Rscript -e 'bookdown::render_book("index.Rmd")'
 
 deploy:
   provider: script
