@@ -1,6 +1,6 @@
 Package: cumtb
 Title: cumtb thesis template
-Version: 1.0.0.9000
+Version: 1.0.0
 Authors@R: c(
   person("Xiangyun", "Huang", , "xiangyunfaith@outlook.com", c("aut", "cre"))
   )
@@ -9,15 +9,10 @@ Depends:
     R (>= 3.1.0)
 Imports: 
     bookdown,
-    inline,
     knitr,
-    PrevMap,
-    sf,
-    sp,
-    geoRglm,
-    Rcpp,
-    rlang,
-    stringr,
+    tinytex,    
+    rmarkdown,
+    ggplot2,
     rticles
 Remotes: 
     yihui/tinytex,
