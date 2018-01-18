@@ -11,8 +11,12 @@ link-citations: yes
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-# 模板使用说明
+```{r setup,include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,fig.showtext=TRUE)
+```
 
+
+# 模板使用说明
 
 本模板基于 bookdown 制作，得益于 pandoc^[<https://www.pandoc.org>]，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及 [@blogdown2017CRC] 第三章。
 
@@ -37,6 +41,13 @@ description: "This is a minimal example of using the bookdown package to write a
 
 也可以同上的做法
 
+## 插图
+
+```{r}
+plot(iris[,-5], col = iris$Species, main = '鸢尾花数据')
+```
+
+
 ## 软件信息
 
 本文会用到比较多的空间数据分析的R包，故而拉取 `rocker/geospatial` 镜像，省却许多安装配置的麻烦，
@@ -60,6 +71,7 @@ zhnumber fandol xltxtra realscripts
 sessionInfo()
 ```
 
+
 docker 内完整的 R 包列表如下：
 
 ```{r}
@@ -77,6 +89,3 @@ list.files(.libPaths())
 
 
 ![镜像准备完毕](figures/pull_down.png)
-
-
-![travis-ci](figures/travis-ci.png)
