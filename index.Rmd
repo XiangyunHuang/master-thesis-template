@@ -1,6 +1,6 @@
 --- 
-title: "挖掘机大学的论文模板"
-author: "采煤专业的某某"
+title: "挖掘机学校的论文模板"
+author: "采煤专业"
 date: "2018年6月12日"
 site: bookdown::bookdown_site
 documentclass: ctexbook
@@ -12,6 +12,7 @@ description: "This is a minimal example of using the bookdown package to write a
 ---
 
 # 模板使用说明
+
 
 本模板基于 bookdown [@bookdown2016CRC] 制作，得益于 pandoc^[<https://www.pandoc.org>]
 
@@ -35,3 +36,16 @@ description: "This is a minimal example of using the bookdown package to write a
 - 作者介绍
 
 也可以同上的做法
+
+## R 进程信息
+
+编译所依赖的R包
+
+```{r}
+sessionInfo()
+```
+
+
+
+
+

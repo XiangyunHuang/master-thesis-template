@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">挖掘机</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">bookdown强力驱动</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
