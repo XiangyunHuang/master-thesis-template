@@ -18,5 +18,5 @@ script:
 
 deploy:
   provider: script
-  script: netlify deploy -s 9527253e-e8f4-4813-8c92-98d2b07dfd6c
+  script: netlify deploy -s [site_id]
   skip_cleanup: true
