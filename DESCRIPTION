@@ -10,6 +10,7 @@ Depends:
 Imports: 
     bookdown,
     knitr,
+    showtext,
     tinytex,    
     rmarkdown,
     ggplot2,
