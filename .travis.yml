@@ -18,5 +18,5 @@ script:
 
 deploy:
   provider: script
-  script: netlify deploy _book
+  script: netlify deploy -t $NETLIFY_PAT
   skip_cleanup: true
