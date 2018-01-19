@@ -78,6 +78,13 @@ docker 内完整的 R 包列表如下：
 list.files(.libPaths())
 ```
 
+
+- 日常编辑在 CentOS 下，通过 RStudio Connect 传上去，在线预览访问这 <https://bookdown.org/xiangyun/master-thesis-template/>
+
+- 通过 netlify 部署，可以访问这 <https://cumtb-thesis-template.netlify.com/>
+
+- 以后的工作环境可能是 docker ，镜像拉取自 `rocker/geospatial`，这环境和 <https://travis-ci.org> 提供的环境比较接近，前者是 Debian ，后者是 Ubuntu， 且都是虚拟的
+
 启动 docker 程序
 
 ![启动docker](figures/start_docker.png)
