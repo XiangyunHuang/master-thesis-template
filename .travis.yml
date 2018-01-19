@@ -12,11 +12,12 @@ before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
+- export NETLIFY_PAT=[secure]
 
 script:
 - Rscript -e 'bookdown::render_book("index.Rmd")'
 
 deploy:
   provider: script
-  script: netlify deploy -s [site_id]
+  script: netlify deploy -t $NETLIFY_PAT
   skip_cleanup: true
