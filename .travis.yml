@@ -18,5 +18,5 @@ script:
 
 deploy:
   provider: script
-  script: netlify deploy _book
+  script: netlify deploy -t "933cf51c2073288e6b0465d8b674779b917f46b9cfe7dab7a046e3ce797d4dde"
   skip_cleanup: true
