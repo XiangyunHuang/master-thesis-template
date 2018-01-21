@@ -1,4 +1,4 @@
-# bookdown 中文范例
+# 基于 bookdown 的论文模板
 
 [![Build Status](https://travis-ci.org/XiangyunHuang/master-thesis-template.svg?branch=master)](https://travis-ci.org/XiangyunHuang/master-thesis-template)
 
