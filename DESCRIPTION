@@ -15,7 +15,3 @@ Imports:
     rmarkdown,
     ggplot2,
     rticles
-Remotes: 
-    yihui/tinytex,
-    rstudio/rmarkdown,
-    tidyverse/ggplot2
