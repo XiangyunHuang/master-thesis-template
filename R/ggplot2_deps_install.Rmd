@@ -1,0 +1,67 @@
+---
+title: "ggplot2"
+output: 
+  pdf_document: 
+    extra_dependencies:
+      ctex: fontset = fandol
+      sourcesanspro: default
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 安装
+
+## 基本安装
+
+```r
+install.packages('ggplot2') # 稳定版
+devtools::install_github('tidyverse/ggplot2') # 开发版
+```
+
+同时安装如下依赖
+
+```{r}
+tools::package_dependencies(packages = 'ggplot2',which = 'Imports')
+```
+
+
+## 加强版
+
+
+ggplot2 被很多包使用，ggplot2 同时也借助很多包，扩展了功能
+
+
+```{r}
+tools::package_dependencies(packages = 'ggplot2',which = 'Suggests')
+```
+
+其中，最复杂的要数 sp 包，现在的继任者是 sf 包，下面讲解如何安装 `sf` 包 
+
+```{r}
+tools::package_dependencies(packages = 'ggplot2',which = 'Enhances')
+```
+
+## 扩展包
+
+### sf 安装
+
+Fedora 平台
+
+```bash
+sudo dnf install gdal-devel proj-devel proj-epsg proj-nad geos-devel udunits2-devel
+```
+
+### sf 使用
+
+geom\_sf
+
+
+
+
+

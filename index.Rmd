@@ -51,6 +51,40 @@ plot(iris[,-5], col = iris$Species, main = '鸢尾花数据')
 ## 软件信息
 
 ```{r}
-devtools::session_info()
+sessionInfo()
+```
+
+
+安装 tinytex 包
+
+```r
+devtools::install_github('yihui/tinytex')
+tinytex::install_tinytex(TRUE, dir = '~/TinyTeX', 
+    repository = 'http://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet' )
+```
+
+在 `.Rprofile` 文件下设置路径
+
+```
+touch .Rprofile
+```
+
+```r
+Sys.setenv(PATH = "/home/cloud2016/TinyTeX/bin/x86_64-linux:
+                   /usr/local/sbin:/usr/local/bin:
+                   /usr/sbin:/usr/bin:/root/bin" )
+```
+
+安装常用的 TeX 包
+
+```bash
+tlmgr install fontspec ctex tex inconsolata \
+      cjk zhnumber fandol xecjk environ ulem \
+      trimspaces sourcesanspro sourcecodepro \
+      appendix metalogo realscripts xltxtra ms
+```
+
+```{r}
+list.files(.libPaths())
 ```
 
