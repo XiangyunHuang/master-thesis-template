@@ -18,5 +18,5 @@ script:
 
 deploy:
   provider: script
-  script: netlify deploy -t "8cffc709c132ff410e08202c8d519d1cbcbf75fea1f18ca094468b7a9d493188"
+  script: netlify deploy -t $NETLIFY_PAT
   skip_cleanup: true
