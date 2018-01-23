@@ -5,4 +5,13 @@
 \usepackage{booktabs}
 \usepackage{makeidx}
 \makeindex
-% \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},formatcom=\xeCJKVerbAddon}
+
+
+% 定义一般页面的页眉和页脚
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrule}{\hrule width\headwidth \vspace{1.5pt}\hrule width\headwidth}
+\fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文}
+\fancyhead[OC]{\kaishu \leftmark}
+\fancyfoot[C]{\thepage}
