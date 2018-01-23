@@ -41,6 +41,8 @@ knitr::opts_chunk$set(collapse = TRUE, fig.showtext = TRUE)
 
 也可以同上的做法
 
+参考文献标准 [GB/T 7714-2015](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style/files/153951/GBT.7714-2015.pdf)
+
 ## 插图
 
 ```{r}
@@ -81,10 +83,8 @@ Sys.setenv(PATH = "/home/cloud2016/TinyTeX/bin/x86_64-linux:
 tlmgr install fontspec ctex tex inconsolata \
       cjk zhnumber fandol xecjk environ ulem \
       trimspaces sourcesanspro sourcecodepro \
-      appendix metalogo realscripts xltxtra ms
-```
-
-```{r}
-list.files(.libPaths())
+      appendix metalogo realscripts xltxtra ms \
+      biblatex biblatex-gb7714-2015 logreq \
+      xstring
 ```
 
