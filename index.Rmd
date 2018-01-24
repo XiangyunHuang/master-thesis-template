@@ -25,27 +25,11 @@ knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
 - 参考文献位置
 - 无序号的章节
 
-
-在 `latex/before_body`添加
-
-- 封面 
-- 独创性声明
-- 中英文摘要
-
-或者目录前的部分单独制作成pdf，因为它们与后面的内容毫无关系，固定下来后，作为pdf文件合并
-
-在 `latex/after_body` 添加
-
-- 致谢
-- 作者介绍
-
-也可以同上的做法
-
 参考文献标准 [GB/T 7714-2015](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style/files/153951/GBT.7714-2015.pdf)
 
 ## 插图
 
-```{r}
+```{r iris-plot,fig.cap='散点图'}
 plot(iris[,-5], col = iris$Species, main = '鸢尾花数据')
 ```
 
@@ -56,35 +40,4 @@ plot(iris[,-5], col = iris$Species, main = '鸢尾花数据')
 sessionInfo()
 ```
 
-
-安装 tinytex 包
-
-```r
-devtools::install_github('yihui/tinytex')
-tinytex::install_tinytex(TRUE, dir = '~/TinyTeX', 
-    repository = 'http://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet' )
-```
-
-在 `.Rprofile` 文件下设置路径
-
-```
-touch .Rprofile
-```
-
-```r
-Sys.setenv(PATH = "/home/cloud2016/TinyTeX/bin/x86_64-linux:
-                   /usr/local/sbin:/usr/local/bin:
-                   /usr/sbin:/usr/bin:/root/bin" )
-```
-
-安装常用的 TeX 包
-
-```bash
-tlmgr install fontspec ctex tex inconsolata \
-      cjk zhnumber fandol xecjk environ ulem \
-      trimspaces sourcesanspro sourcecodepro \
-      appendix metalogo realscripts xltxtra ms \
-      biblatex biblatex-gb7714-2015 logreq \
-      xstring
-```
 

@@ -33,46 +33,6 @@
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage[tmargin=3.0cm,bmargin=3.0cm,lmargin=3.0cm,rmargin=3.0cm]{geometry}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
 \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
@@ -162,39 +122,20 @@
   无序号的章节
 \end{itemize}
 
-在 \texttt{latex/before\_body}添加
-
-\begin{itemize}
-\tightlist
-\item
-  封面
-\item
-  独创性声明
-\item
-  中英文摘要
-\end{itemize}
-
-或者目录前的部分单独制作成pdf，因为它们与后面的内容毫无关系，固定下来后，作为pdf文件合并
-
-在 \texttt{latex/after\_body} 添加
-
-\begin{itemize}
-\tightlist
-\item
-  致谢
-\item
-  作者介绍
-\end{itemize}
-
-也可以同上的做法
-
 参考文献标准
 \href{https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style/files/153951/GBT.7714-2015.pdf}{GB/T
 7714-2015}
 
 \section{插图}
 
-\begin{center}\includegraphics[width=.7\textwidth]{master-thesis-template_files/figure-latex/unnamed-chunk-1-1} \end{center}
+\begin{figure}
+
+{\centering \includegraphics[width=.7\textwidth]{master-thesis-template_files/figure-latex/iris-plot-1} 
+
+}
+
+\caption{散点图}\label{fig:iris-plot}
+\end{figure}
 
 \section{软件信息}
 
@@ -225,43 +166,6 @@
 ## [13] tools_3.4.3     stringr_1.2.0   showtext_0.5-1  xfun_0.1       
 ## [17] yaml_2.1.16     compiler_3.4.3  htmltools_0.3.6 knitr_1.18
 \end{verbatim}
-
-安装 tinytex 包
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{'yihui/tinytex'}\NormalTok{)}
-\NormalTok{tinytex}\OperatorTok{::}\KeywordTok{install_tinytex}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{dir =} \StringTok{'~/TinyTeX'}\NormalTok{, }
-    \DataTypeTok{repository =} \StringTok{'http://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet'}\NormalTok{ )}
-\end{Highlighting}
-\end{Shaded}
-
-在 \texttt{.Rprofile} 文件下设置路径
-
-\begin{verbatim}
-touch .Rprofile
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{Sys.setenv}\NormalTok{(}\DataTypeTok{PATH =} \StringTok{"/home/cloud2016/TinyTeX/bin/x86_64-linux:}
-\StringTok{                   /usr/local/sbin:/usr/local/bin:}
-\StringTok{                   /usr/sbin:/usr/bin:/root/bin"}\NormalTok{ )}
-\end{Highlighting}
-\end{Shaded}
-
-安装常用的 TeX 包
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ExtensionTok{tlmgr}\NormalTok{ install fontspec ctex tex inconsolata \textbackslash{}}
-\NormalTok{      cjk zhnumber fandol xecjk environ ulem \textbackslash{}}
-\NormalTok{      trimspaces sourcesanspro sourcecodepro \textbackslash{}}
-\NormalTok{      appendix metalogo realscripts xltxtra ms \textbackslash{}}
-\NormalTok{      biblatex biblatex-gb7714-2015 logreq \textbackslash{}}
-\NormalTok{      xstring}
-\end{Highlighting}
-\end{Shaded}
 
 \chapter{论文综述}\label{intro}
 
