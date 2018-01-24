@@ -11,8 +11,9 @@ description: "This is a minimal example of using the bookdown package to write a
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
-                      fig.showtext = TRUE, out.width = '.7\\textwidth')
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
+                      fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
+                      out.width = '.7\\textwidth')
 ```
 
 # 引言
