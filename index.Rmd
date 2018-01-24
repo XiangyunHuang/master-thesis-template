@@ -10,7 +10,8 @@ description: "This is a minimal example of using the bookdown package to write a
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE, fig.showtext = TRUE)
+knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
+                      fig.showtext = TRUE, out.width = '.7\\textwidth')
 ```
 
 
