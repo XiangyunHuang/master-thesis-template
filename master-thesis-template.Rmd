@@ -18,14 +18,14 @@ knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
 
 # 模板使用说明
 
-本模板基于 bookdown 制作，得益于 pandoc^[<https://www.pandoc.org>]，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及 [@blogdown2017CRC] 第三章。
+本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及 [@blogdown2017CRC] 第三章。
 
 - 设置文武线
 - 章节样式
 - 参考文献位置
 - 无序号的章节
 
-参考文献标准 [GB/T 7714-2015](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style/files/153951/GBT.7714-2015.pdf)
+参考文献标准 GB/T 7714\-2015
 
 ## 插图
 
