@@ -44,7 +44,7 @@ knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
 
 ## 插图
 
-```{r,eval=FALSE}
+```{r}
 plot(iris[,-5], col = iris$Species, main = '鸢尾花数据')
 ```
 
