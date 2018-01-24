@@ -33,6 +33,8 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 
+*.log
+
 _book
 _bookdown_files
 rsconnect
