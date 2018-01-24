@@ -20,6 +20,7 @@ bookdown::pdf_book:
   toc_depth: 3
   toc_unnumbered: yes
   toc_appendix: yes
+  toc_bib: yes
   base_format: rticles::ctex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
 bookdown::epub_book: default
