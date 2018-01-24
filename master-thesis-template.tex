@@ -1,7 +1,7 @@
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{ctexbook}
+\documentclass[a4paper,11pt,]{ctexbook}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -32,7 +32,7 @@
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage[a4paper,tmargin=3.0cm,bmargin=3.0cm,lmargin=3.0cm,rmargin=3.0cm]{geometry}
+\usepackage[tmargin=3.0cm,bmargin=3.0cm,lmargin=3.0cm,rmargin=3.0cm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -112,6 +112,14 @@
 \fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文}
 \fancyhead[OC]{\kaishu \leftmark}
 \fancyfoot[C]{\thepage}
+
+\ctexset{
+  chapter/name = {,},
+  chapter/number = \arabic{chapter},
+  % section/name = {\S},
+  % section/number = \arabic{section}
+  section/format += \raggedright
+}
 \usepackage[super,square,sort,compress]{natbib}
 \bibliographystyle{thuthesis-numeric}
 
@@ -132,18 +140,6 @@
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
 \begin{document}
-
-
-% \thispagestyle{empty}
-
-% \begin{center}
-% 献给……
-% 
-% 呃，爱谁谁吧
-% \end{center}
-
-% \setlength{\abovedisplayskip}{-5pt}
-% \setlength{\abovedisplayshortskip}{-5pt}
 
 {
 \setcounter{tocdepth}{2}
@@ -225,10 +221,9 @@
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.12.15    bookdown_0.5.16 sysfonts_0.7.2  showtextdb_2.0 
 ##  [5] digest_0.6.14   rprojroot_1.3-2 backports_1.1.2 magrittr_1.5   
-##  [9] evaluate_0.10.1 highr_0.6       stringi_1.1.6   rstudioapi_0.7 
-## [13] rmarkdown_1.8   tools_3.4.3     stringr_1.2.0   showtext_0.5-1 
-## [17] xfun_0.1        yaml_2.1.16     compiler_3.4.3  htmltools_0.3.6
-## [21] knitr_1.18
+##  [9] evaluate_0.10.1 stringi_1.1.6   rstudioapi_0.7  rmarkdown_1.8.7
+## [13] tools_3.4.3     stringr_1.2.0   showtext_0.5-1  xfun_0.1       
+## [17] yaml_2.1.16     compiler_3.4.3  htmltools_0.3.6 knitr_1.18
 \end{verbatim}
 
 安装 tinytex 包
@@ -449,7 +444,7 @@ chunks within the document. You can embed an R code chunk like this:
 \bibliography{book.bib,packages.bib,articles.bib}
 \addcontentsline{toc}{chapter}{\bibname}
 
-\backmatter
-\printindex
+% \backmatter
+% \printindex
 
 \end{document}

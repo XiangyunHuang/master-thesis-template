@@ -3,9 +3,10 @@ site: bookdown::bookdown_site
 documentclass: ctexbook
 bibliography: [book.bib, packages.bib, articles.bib]
 biblio-style: thuthesis-numeric
-geometry: [a4paper, tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
+geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
 link-citations: yes
 natbiboptions: super,square,sort,compress
+classoption: "a4paper,11pt,"
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
