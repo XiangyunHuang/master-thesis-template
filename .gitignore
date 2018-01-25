@@ -38,3 +38,5 @@ vignettes/*.pdf
 _book
 _bookdown_files
 rsconnect
+*_cache/
+*_files/
