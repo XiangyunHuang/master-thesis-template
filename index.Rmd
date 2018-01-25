@@ -1,13 +1,15 @@
 --- 
 site: bookdown::bookdown_site
 documentclass: ctexbook
+geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
+classoption: "hyperref, 11pt, a4paper"
+keywords: "R语言；混合模型；网络"  
 bibliography: [book.bib, packages.bib, articles.bib]
 biblio-style: thuthesis-numeric
-geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
+biblio-title: 参考文献
+natbiboptions: super,square
 link-citations: yes
-classoption: "a4paper,11pt,"
-natbiboption: super,square
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+colorlinks: yes
 ---
 
 ```{r setup,include=FALSE}
@@ -24,10 +26,10 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 - 模板框架（完成）
 - 字体设置（基本完成）
 - 附录设置（完成）
-- 页眉页脚
+- 页眉页脚（部分完成）
 - 目录设置（完成）
 - 章节样式（完成） 
-- 参考文献 
+- 参考文献（完成）
 
 
 参考文献标准 GB/T 7714\-2015，而我校还在使用 2005 版，不过就我校的格式要求来看没什么区别，因此从 [thuthesis](https://github.com/xueruini/thuthesis) 模板拷贝了参考文献样式设置文件 `thuthesis-numeric.bst`
