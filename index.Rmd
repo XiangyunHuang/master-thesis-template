@@ -31,8 +31,16 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 - 目录设置（完成）
 - 章节样式（完成） 
 - 参考文献（完成）
-- 字距、行距、字号
-- 
+- 字距、行距、字号（章节、段落等）
+- 封面 
+- 授权页
+- 摘要
+
+下面的等自己的论文搞定后再做
+
+- 数学公式、插图排版格式
+- 图的格式要求：图中数字、中英文字体设置
+- 模板使用说明
 
 参考文献标准 GB/T 7714\-2015，而我校还在使用 2005 版，不过就我校的格式要求来看没什么区别，因此从 [thuthesis](https://github.com/xueruini/thuthesis) 模板拷贝了参考文献样式设置文件 `thuthesis-numeric.bst`
 
