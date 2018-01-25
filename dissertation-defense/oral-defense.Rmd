@@ -13,7 +13,7 @@ output:
     fig_caption: yes
     incremental: no
     keep_tex: yes
-    latex_engine: xelatex
+    latex_engine: lualatex
     slide_level: 2
     template: ../latex/default.latex
     toc: yes
@@ -21,6 +21,7 @@ section-titles: false
 header-includes:
     - \usepackage{ctex}
     - \usecolortheme[named=SpringGreen4]{structure}
+    - \usepackage[default]{sourcesanspro}
 biblio-title: 参考文献
 bibliography: refer.bib
 biblio-style: apalike
@@ -31,7 +32,9 @@ classoption: "hyperref,x11names,UTF8"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE, collapse = TRUE, fig.align = 'center',
+                      fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
+                      out.width = '.7\\textwidth', highlight = FALSE )
 ```
 
 # 引言
@@ -61,4 +64,9 @@ summary(cars)
 ```{r pressure}
 plot(pressure)
 ```
+
+
+## 语法高亮
+
+
 
