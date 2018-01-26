@@ -15,13 +15,15 @@
 \ctexset{
   chapter/name = {,},
   chapter/number = \arabic{chapter},
-  chapter/numberformat = \sf,
+  chapter/numberformat = \sf, % 数字字体 Arial
   chapter/beforeskip = 12pt,
   chapter/afterskip = 18pt,
-  chapter/format += \sf\zihao{3},
+  chapter/format += \sf\zihao{3},  % 一级标题
   chapter/fixskip = true,
-  section/numberformat = \rm,    % 数字字体 Arial
-  section/format += \sf\zihao{4}\raggedright,
+  section/numberformat = \rm,    
+  section/format += \sf\zihao{4}\raggedright, % 二级标题
+  subsection/numberformat = \rm,   
+  subsection/format += \sf\zihao{-4}\raggedright,  % 三级标题
   % contentsname = {目\quad 录},
   % bibname      = {参~考~文~献}
 }

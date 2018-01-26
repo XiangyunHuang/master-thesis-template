@@ -67,9 +67,120 @@ devtools::install_github('XiangyunHuang/rticles')
 图中字体为宋体，5号，数字、字母一律 Times New Roman
 图名字体设置同上
 
-```{r iris-plot,fig.cap='散点图'}
-plot(iris[,-5], col = iris$Species, main = '鸢尾花数据')
+### 绘图的正确姿势 
+
+壮士论文中的图大多是 Base R 风格，以 `plot` 为核心，辅之以 `par`（全局版式）、 `(m)text`（添加文本）、`title`（标题）、`legend`（图例）、`axis` （坐标轴）等精调函数，打造出版级的图形，这种代码有两个极其优良的特点：执行效率高和高稳定性。
+
+但是，看似越简单的东西实现起来越复杂，下面这个例子摘自 [Jumping Rivers](http://blog.jumpingrivers.com/posts/2018/2018-01-24-base-r-graphics/)，想画好不容易的，壮士慢慢体会从图 \@ref(fig:iris-plot) 到图 \@ref(fig:pretty-iris)的区别，另外有一份来自统计之都的资料---[漫谈条形图](https://cosx.org/2017/10/discussion-about-bar-graph/)，值得一读。
+
+```{r iris-plot,fig.cap='散点图的错误示范'}
+with(iris, {
+  plot(Sepal.Length, Sepal.Width, col = Species, main = '鸢尾花数据')
+  legend("topright", legend = levels(Species), col = 1:3, pch = 21)
+})
 ```
+```{r pretty-iris,fig.cap='基本正确的绘图姿势'}
+## Same as geom_jitter
+iris$Sepal.Length = jitter(iris$Sepal.Length)
+iris$Sepal.Width = jitter(iris$Sepal.Width)
+alpha = 150 # Transparent points
+palette(c(rgb(200, 79, 178, alpha = alpha, maxColorValue = 255), 
+          rgb(105, 147, 45, alpha = alpha, maxColorValue = 255),
+          rgb(85, 130, 169, alpha = alpha, maxColorValue = 255)))
+
+par(mar = c(3, 3, 2, 1), # Dist' from plot to side of page
+    mgp = c(2, 0.4, 0), # Dist' plot to label
+    las = 1, # Rotate y-axis text
+    tck = -.01, # Reduce tick length
+    xaxs = "i", yaxs = "i") # Remove plot padding
+plot(iris$Sepal.Length, iris$Sepal.Width, 
+     bg = iris$Species, # Fill colour
+     pch = 21, # Shape: circles that can filed
+     xlab = "Sepal Length", ylab = "Sepal Width", # Labels
+     axes = FALSE, # Don't plot the axes
+     frame.plot = FALSE, # Remove the frame 
+     xlim = c(4, 8), ylim = c(2, 4.5), # Limits
+     panel.first = abline(h = seq(2, 4.5, 0.5), col = "grey80"))
+at = pretty(iris$Sepal.Length)
+mtext(side = 1, text = at, at = at, 
+      col = "grey20", line = 1, cex = 0.9)
+at = pretty(iris$Sepal.Width)
+mtext(side = 2, text = at, at = at, col = "grey20", line = 1, cex = 0.9)
+text(5, 4.2, "setosa", col = rgb(200, 79, 178, maxColorValue = 255))
+text(5.3, 2.1, "versicolor", col = rgb(105, 147, 45, maxColorValue = 255))
+text(7, 3.7, "virginica", col = rgb(85, 130, 169, maxColorValue = 255))
+title("The infamous IRIS data", adj = 1, 
+      cex.main = 0.8, font.main = 2, col.main = "black")
+```
+
+
+再来一个 Base R 风格的集合，如图 \@ref(fig:plot-object)所示，包含时间序列图、散点图、条形图、直方图等
+
+```{r plot-object,fig.cap='plot对象集合',out.width = '\\textwidth'}
+layout(matrix(seq(6), 2, 3, byrow = TRUE))
+op <- par(mar=c(2,2,.5,.5))
+# 分类散点图
+plot(Sepal.Length~Sepal.Width,data=iris,col = Species,pch=16 )
+legend('topright',legend = unique(iris$Species),box.col = "gray",
+       pch=16,col = unique(iris$Species) )
+box(col="gray")
+# 气泡图
+plot(Volume~Height,data = trees,pch =16,cex = Girth/8,
+     col = rev(terrain.colors(nrow(trees), alpha = .5)))
+box(col="gray")
+# 折线图
+plot(AirPassengers)
+box(col="gray")
+# 柱形图
+set.seed(123456)
+barPois <- table(stats::rpois(1000, lambda = 5))
+plot(barPois,col = "lightblue",type = 'h',lwd=10,main = "")
+box(col="gray")
+# 马赛克图
+plot(HairEyeColor,col = "lightblue",border = 'white',main = '')
+# 直方图
+set.seed(1234)
+n <- 2^24
+x <- runif(n,0,1)
+delta <- 0.01
+len <- diff(c(0,which(x < delta),n+1))-1
+ylim <- seq( 0, 1800, by = 300)
+xlim <- seq( 0, 100, by = 20)
+p <- hist(len[len < 101], breaks = -1:100+0.5,plot = FALSE)
+plot(p,ann = FALSE,axes = FALSE,col="lightblue",border = "white",main = "")	 
+axis( 1, labels = xlim, at = xlim, las = 1) # x 轴
+axis( 2, labels = ylim, at = ylim, las = 0) # y 轴
+box(col="gray")
+```
+
+- 配色是使图形高大上的重要一环，此处资料参看 [colors in plot](https://github.com/XiangyunHuang/colors-in-plots)
+- 一些基础的简单图形还是建议使用 [ggplot2](https://github.com/tidyverse/ggplot2)，一份 ggplot2 风格的绘图集合，请看网页 <http://www.ggplot2-exts.org/> ，下面还是以散点图为例，壮士可以比较图 \@ref(fig:base-ggplot) 和图 \@ref(fig:pretty-iris) 的细节差别。
+
+```{r base-ggplot,fig.cap='散点图'}
+library(ggplot2)
+ggplot(iris, aes( Sepal.Length, Sepal.Width ) ) + 
+  geom_point( aes( colour = Species ) ) +
+  scale_colour_brewer( palette = "Set1" ) +
+  labs(title = '鸢尾花数据的散点图', 
+       x = '萼片长度', y = '萼片宽度', colour = '鸢尾花类别') +
+  theme_minimal() +
+  theme(axis.ticks = element_line( colour = "black" ),
+        axis.line = element_line( size = 0.2 ))
+```
+
+
+### 代码块
+
+代码块设置
+
+```{r,collapse=TRUE}
+1 + 2
+set.seed(2018)
+rnorm(5)
+set.seed(2018)
+diag(rnorm(5))
+```
+
 
 
 ## 软件信息
