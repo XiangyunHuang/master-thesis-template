@@ -11,12 +11,15 @@
 % 章节标题数字样式
 \ctexset{
   chapter/name = {,},
-  chapter/number = \sf{\arabic{chapter}},
-  % section/name = {\S},
-  % section/number = \arabic{section}
-  section/format += \raggedright,
+  chapter/number = \arabic{chapter},
+  chapter/numberformat = \sf,
+  chapter/beforeskip = 12pt,
+  chapter/afterskip = 18pt,
+  chapter/format += \sf\zihao{3},
+  chapter/fixskip = true,
+  section/numberformat = \sf,
+  section/format += \sf\zihao{4}\raggedright,
   % contentsname = {目\quad 录},
-  abstractname = {摘\quad 要},
   % bibname      = {参~考~文~献}
 }
 
@@ -26,11 +29,10 @@
 \fancyhf{}
 % 设置文武线
 \renewcommand{\headrule}{\hrule width\headwidth \vspace{1.5pt}\hrule width\headwidth}
-
 % 设置左页页眉
-\fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文} % 左页也是奇数页页眉设置
+\fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文} % 左页也是奇数页 
 % 设置右页页眉
-\fancyhead[OC]{\kaishu \leftmark} % 右页也是偶数页设置
+\fancyhead[OC]{\kaishu \leftmark} % 右页也是偶数页
 % 设置页脚
 \fancyfoot[C]{\thepage} % 没有 E或O 则表示左页和右页一样的设置
 
@@ -45,5 +47,3 @@
 
 % 设定图片路径
 \graphicspath{{figures/}}
-
-

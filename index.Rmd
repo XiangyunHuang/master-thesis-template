@@ -2,7 +2,7 @@
 site: bookdown::bookdown_site
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
-classoption: "hyperref, 11pt, a4paper"
+classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.25"
 keywords: "R语言；混合模型；网络"  
 bibliography: [book.bib, packages.bib, articles.bib]
 biblio-style: thuthesis-numeric
@@ -25,13 +25,20 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，而 PDF 版本在本地编译好了后酌情发布。
 
 - 模板框架（完成）
-- 字体设置（基本完成）
+- 字体设置（完成）
 - 附录设置（完成）
-- 页眉页脚（基本完成），正文左页页眉楷体
+- 页眉页脚（完成）
 - 目录设置（完成）
 - 章节样式（完成） 
 - 参考文献（完成）
-- 字距、行距、字号（章节、段落等）
+
+审查如下部分
+
+- 字距
+- 行距
+- 字号（章节、段落等）
+- 段前段后行距 
+- 数字，字母字体： 正文用 Times New Roman 一级标题（章）用 Arial
 - 封面 
 - 授权页
 - 摘要
