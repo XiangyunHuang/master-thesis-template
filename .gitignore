@@ -48,3 +48,7 @@ rsconnect
 
 *_cache/
 *_files/
+
+# do not upload follow two folders
+R/
+dissertation-defense/
