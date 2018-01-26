@@ -6,6 +6,9 @@
 \usepackage[OT1]{fontenc}
 \usepackage{mathptmx}
 
+% 为了使用 Arial 字体，用于章节前的数字
+\renewcommand{\sfdefault}{phv}
+
 \usepackage{booktabs}
 
 % 章节标题数字样式
@@ -17,7 +20,7 @@
   chapter/afterskip = 18pt,
   chapter/format += \sf\zihao{3},
   chapter/fixskip = true,
-  section/numberformat = \sf,
+  section/numberformat = \rm,    % 数字字体 Arial
   section/format += \sf\zihao{4}\raggedright,
   % contentsname = {目\quad 录},
   % bibname      = {参~考~文~献}
