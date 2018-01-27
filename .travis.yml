@@ -14,7 +14,7 @@ before_install:
 - npm install netlify-cli -g
 
 script:
-- Rscript -e 'library(tinytex);tinytex::install_tinytex(TRUE);bookdown::render_book("index.Rmd",output_format ='bookdown::gitbook');bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book");bookdown::render_book("index.Rmd", output_format = "bookdown::epub_book")'
+- Rscript -e 'library(tinytex);tinytex::install_tinytex(TRUE);bookdown::render_book("index.Rmd",output_format ="bookdown::gitbook");bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book");bookdown::render_book("index.Rmd", output_format = "bookdown::epub_book")'
 
 deploy:
   provider: script
