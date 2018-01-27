@@ -6,7 +6,6 @@ classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.25"
 keywords: "R语言；混合模型；网络"  
 bibliography: [book.bib, packages.bib, articles.bib]
 biblio-style: thuthesis-numeric
-biblio-title: 参考文献
 natbiboptions: super,square
 link-citations: yes
 colorlinks: yes
@@ -17,6 +16,8 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
                       fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
                       out.width = '.7\\textwidth')
 ```
+
+
 
 # 引言
 

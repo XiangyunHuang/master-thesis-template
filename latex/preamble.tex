@@ -24,8 +24,8 @@
   section/format += \sf\zihao{4}\raggedright, % 二级标题
   subsection/numberformat = \rm,   
   subsection/format += \sf\zihao{-4}\raggedright,  % 三级标题
-  % contentsname = {目\quad 录},
-  % bibname      = {参~考~文~献}
+  contentsname = {目\quad 录},
+  % bibname      = {参\quad 考\quad 文\quad 献},
 }
 
 % 定义一般页面的页眉和页脚
@@ -33,7 +33,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 % 设置文武线
-\renewcommand{\headrule}{\hrule width\headwidth \vspace{1.5pt}\hrule width\headwidth}
+\renewcommand{\headrule}{\hrule height1pt width\headwidth \vspace{1.5pt}\hrule width\headwidth}
 % 设置左页页眉
 \fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文} % 左页也是奇数页 
 % 设置右页页眉
