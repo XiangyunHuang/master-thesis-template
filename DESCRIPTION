@@ -13,5 +13,6 @@ Imports:
     showtext,
     tinytex,    
     rmarkdown,
-    ggplot2,
-    rticles
+    ggplot2
+Remotes: 
+    XiangyunHuang/rticles
