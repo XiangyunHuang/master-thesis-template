@@ -64,14 +64,59 @@ devtools::install_github('XiangyunHuang/rticles')
 图中字体为宋体，5号，数字、字母一律 Times New Roman
 图名字体设置同上
 
-```{r plot-sample, dev = 'pdf'}
+```r
+## base plot 请使用 pdf 而不是 cairo_pdf
+pdf(file = 'base-plot-fontset-cairo-pdf.pdf')
 with(iris, {
   par(family = 'Times')
   plot(Sepal.Length, Sepal.Width, col = Species, family = 'Times')
   title(main = '鸢尾花数据', family = "GB1")
   legend("topright", legend = levels(Species), col = 1:3, pch = 21)
 })
+dev.off()
 ```
+
+```{r,echo=FALSE}
+knitr::include_graphics(path = 'figures/base-plot-fontset-cairo-pdf.pdf')
+```
+
+pdf 图形设备自带的字体支持
+
+```{r}
+names(pdfFonts())
+```
+
+借助 [showtext](https://github.com/yixuan/showtext) 包可以获得更加精确的字体定制，
+
+```{r font-add}
+library(showtext) # 加载 showtext 包
+font_install(source_han_serif()) # 安装思源宋体
+font_families() # 查看可供用showtext使用的字体
+```
+
+使用新添加的思源字体
+
+```{r fiji,fig.width=8,fig.height=6}
+library(maps)
+library(mapdata)
+library(ggplot2)
+FijiMap <- map_data("worldHires", region = "Fiji" ) 
+
+ggplot(FijiMap, aes( x = long, y = lat)) + 
+  geom_map( map = FijiMap, aes(map_id = region),size =.2 ) +
+  geom_point(data = quakes, aes(x = long, y =  lat,colour = mag),pch = 16) +
+  xlim(160, 195) + 	 
+  scale_colour_distiller(palette = "Spectral") +
+  scale_y_continuous(breaks=(-18:18)*5) +
+  coord_map("ortho", orientation = c(-10,180,0)) +
+  labs(colour = "震级",x = "经度",y = "纬度",title = '斐济地震带') +
+  theme_minimal() +
+  theme(title = element_text( family = "source-han-serif-cn" ), 
+        axis.title = element_text( family = "source-han-serif-cn" ),
+        legend.title = element_text( family = "source-han-serif-cn" ),
+        legend.position = c(1,0), legend.justification = c(1,0))
+```
+
 
 
 ### 绘图的正确姿势 
