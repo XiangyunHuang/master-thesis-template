@@ -6,12 +6,13 @@ cache:
   - _bookdown_files
   - $HOME/.npm
 
-pandoc_version: 1.17.2
+pandoc_version: 2.1.1
 
 before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
+- tlmgr install ctex
 
 script:
 - Rscript -e 'bookdown::render_book("index.Rmd");bookdown::render_book(input = "index.Rmd",output_format = "bookdown::pdf_book",output_dir = "_book")'
