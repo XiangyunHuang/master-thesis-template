@@ -1,4 +1,7 @@
 --- 
+title: "中国矿业大学（北京）硕士学位论文模板"
+author: "某壮士制作"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
@@ -86,6 +89,12 @@ pdf 图形设备自带的字体支持
 names(pdfFonts())
 ```
 
+还可以插入 bash 
+
+```{bash}
+tlmgr list --only-installed | head -n 6 # 列出安装的 TeX 包 
+```
+
 借助 [showtext](https://github.com/yixuan/showtext) 包可以获得更加精确的字体定制，
 
 ```{r font-add}
@@ -101,14 +110,15 @@ library(maps)
 library(mapdata)
 library(ggplot2)
 FijiMap <- map_data("worldHires", region = "Fiji" ) 
-ggplot(FijiMap, aes( x = long, y = lat)) + 
+ggplot(FijiMap, aes(x = long, y = lat)) + 
   geom_map( map = FijiMap, aes(map_id = region),size =.2 ) +
-  geom_point(data = quakes, aes(x = long, y =  lat,colour = mag),pch = 16) +
+  geom_point(data = quakes, pch = 16, 
+             aes(x = long, y =  lat, colour = mag)) +
   xlim(160, 195) + 	 
   scale_colour_distiller(palette = "Spectral") +
   scale_y_continuous(breaks=(-18:18)*5) +
   coord_map("ortho", orientation = c(-10,180,0)) +
-  labs(colour = "震级",x = "经度",y = "纬度",title = '斐济地震带') +
+  labs(colour = "震级", x = "经度", y = "纬度", title = '斐济地震带') +
   theme_minimal() +
   theme(title = element_text( family = "source-han-serif-cn" ), 
         axis.title = element_text( family = "source-han-serif-cn" ),
@@ -232,14 +242,12 @@ set.seed(2018)
 diag(rnorm(5))
 ```
 
-
-
 ## 软件信息
 
 编译环境
 
 ```{r}
-devtools::session_info()
+sessionInfo()
 ```
 
 

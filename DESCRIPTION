@@ -11,8 +11,6 @@ Imports:
     bookdown,
     knitr,
     showtext,
-    tinytex,    
-    rmarkdown,
     ggplot2,
     maps,
     mapdata,
