@@ -12,8 +12,7 @@ before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
-- tlmgr install ctex ms ulem xecjk environ trimspaces \
-zhnumber fandol xltxtra realscripts
+- tlmgr install ctex ms ulem xecjk environ trimspaces zhnumber fandol xltxtra realscripts
 
 script:
 - Rscript -e 'bookdown::render_book("index.Rmd");bookdown::render_book(input = "index.Rmd",output_format = "bookdown::pdf_book",output_dir = "_book")'
