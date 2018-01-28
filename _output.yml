@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">论文模板</a></li>
+        <li><a href="./">矿大（北京）硕士论文模板</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">由bookdown发布</a></li>
     download: ["pdf", "epub"]
