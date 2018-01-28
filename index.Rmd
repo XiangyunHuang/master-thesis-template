@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 
 \pagenumbering{arabic}
 
-本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，而 PDF 版本在本地编译好了后酌情发布。
+本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
 
 - 模板框架（完成）
 - 字体设置（完成）
@@ -64,7 +64,7 @@ devtools::install_github('XiangyunHuang/rticles')
 图中字体为宋体，5号，数字、字母一律 Times New Roman
 图名字体设置同上
 
-```{r plot-sample}
+```{r plot-sample, dev = 'pdf'}
 with(iris, {
   par(family = 'Times')
   plot(Sepal.Length, Sepal.Width, col = Species, family = 'Times')
