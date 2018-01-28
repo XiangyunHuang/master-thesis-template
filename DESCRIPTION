@@ -15,6 +15,7 @@ Imports:
     rmarkdown,
     ggplot2,
     maps,
-    mapdata
+    mapdata,
+    mapproj
 Remotes: 
     XiangyunHuang/rticles
