@@ -12,6 +12,7 @@ before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
+- tlmgr update --all --self
 - tlmgr install ctex ms ulem xecjk environ trimspaces zhnumber fandol xltxtra realscripts
 
 script:
