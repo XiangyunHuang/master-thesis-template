@@ -15,7 +15,7 @@ before_install:
 - tlmgr install ctex ms ulem xecjk environ trimspaces zhnumber fandol xltxtra realscripts
 
 script:
-- Rscript -e 'bookdown::render_book("index.Rmd");bookdown::render_book(input = "index.Rmd",output_format = "bookdown::pdf_book",output_dir = "_book")'
+- Rscript -e 'bookdown::render_book("index.Rmd");rmarkdown::render(input = "latex/bookdown-rticles-zh.Rmd")'
 
 deploy:
   provider: script
