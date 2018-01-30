@@ -17,6 +17,8 @@ colorlinks: yes
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
                       fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
                       out.width = '.7\\textwidth')
+library(ggplot2)
+theme_set(theme_minimal())
 ```
 
 # 绪论/引言/背景
