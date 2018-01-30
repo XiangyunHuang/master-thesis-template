@@ -29,7 +29,7 @@ for(i in seq(n^2)){
 
 # 三维数组
 
-library(ggplot2)
+# library(ggplot2)
 library(gridExtra)
 
 p1 <- ggplot(dat, aes(phi, kappa)) +
