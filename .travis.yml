@@ -12,9 +12,11 @@ before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
+- tlmgr update --all --self
+- tlmgr install ctex xecjk zhnumber fandol
 
 script:
-- Rscript -e 'bookdown::render_book("index.Rmd")'
+- Rscript -e 'bookdown::render_book("index.Rmd",output_format = 'bookdown::pdf_book')'
 
 deploy:
   provider: script

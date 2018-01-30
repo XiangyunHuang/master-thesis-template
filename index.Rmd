@@ -116,7 +116,9 @@ date: "`r Sys.Date()`"
 安装编译 PDF 需要的 TeX 包
 
 ```
-tlmgr install fancyhdr psnfss pdfpages fontinst times helvetic dvips tlgs.win32 symbol rsfs
+tlmgr install fancyhdr psnfss pdfpages fontinst \
+  times helvetic dvips tlgs.win32 symbol \
+  rsfs unicode-math filehook lm-math
 ```
 
 本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
