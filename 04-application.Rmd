@@ -34,7 +34,7 @@ $\sigma^2 = 1, \phi = 0.15, \kappa =  2$，块金效应 (nugget effect) $\tau^2 
 
 
 ```{r low-rank,fig.cap="数值模拟",fig.pos="!htb"}
-knitr::include_graphics("figure/simulation.pdf")
+knitr::include_graphics("figures/simulation.pdf")
 ```
 
 # 案例分析
