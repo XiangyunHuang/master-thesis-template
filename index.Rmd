@@ -19,13 +19,19 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
                       out.width = '.7\\textwidth')
 ```
 
-# 引言
+# 绪论/引言/背景
 
-\pagenumbering{arabic}
+- 解决（做）了什么问题，为什么做这个问题，是怎么做的，写发表的文章的三步走
+What How
+- 从 kriging 克里金插值到高斯过程，简单介绍提出本文的大纲思路
+
+# 模型介绍
+
+
 
 - 开发者注意：使用说明分 非 R 用户、 R 用户和高级 R 用户
 
-壮士使用时，请先删除本文档开头的三行
+壮士使用时，请先删除本文档开头的三行，即
 
 ```
 title: "中国矿业大学（北京）硕士学位论文模板"
