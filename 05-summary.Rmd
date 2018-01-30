@@ -8,3 +8,7 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(faithful)
 ```
 
+```{r}
+devtools::session_info(installed.packages()[, "Package"])
+```
+
