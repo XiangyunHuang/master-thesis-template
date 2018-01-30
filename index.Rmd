@@ -27,9 +27,54 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 
 __优点：不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境__
 
+基于 The Rocker Project^[<https://www.rocker-project.org/>] 快速构建数据分析环境，[Rocker项目](https://github.com/rocker-org/rocker) 站在 [Debian](https://www.debian.org/) 和 [R](https://www.r-project.org/) 的肩膀上，在 [Docker](https://www.docker.com/)内配置众多数据分析和开发的工具，免去用户手动配置的复杂性。此事非有心者不能为之 --- 其间需费时费力找寻依赖库，编译 R 包，还要尽可能地给 Docker 镜像减负，以便部署。如果想抢先试水的赶快去 Rocker 项目主页。
+
 ### 如何安装 Docker 
 
+
+
+
 ### 安装 Docker 后
+
+假设你已经安装好了 Docker，启动 Docker，只需双击桌面快捷方式
+
+![](https://raw.githubusercontent.com/XiangyunHuang/BDAR/master/VBOX4DS/figures/docker-quick-start.png)
+
+直至启动成功
+
+![](https://raw.githubusercontent.com/XiangyunHuang/BDAR/master/VBOX4DS/figures/start_docker.png)
+
+
+然后打开 putty，选择 docker（之前配置好了IP和端口），
+
+![](https://raw.githubusercontent.com/XiangyunHuang/BDAR/master/VBOX4DS/figures/PuTTY-login-docker.png)
+
+用账户 docker 密码 tcuser，登录，
+
+
+```
+docker images
+```
+
+不管你是什么OS，执行下面一行
+
+```bash
+docker run --rm -p 8787:8787 rocker/rstudio
+```
+
+或者自己定制一番
+
+```bash
+docker run --name TinyTeX -d -p 8787:8787 -e ROOT=TRUE \
+-e USER=rstudio -e PASSWORD=rstudio rocker/geospatial /bin/bash
+```
+
+
+```
+docker start TinyTeX # 我的工作环境
+```
+
+打开浏览器输入网址 <http://localhost:8787> ，接着输入用户名：rstudio，密码：rstudio。然后，尽情探索吧。如果你不想知道这一行命令的背后发生了什么，那就没必要往下看了。下面介绍怎么自己搭建环境。
 
 
 - 开发者注意：使用说明考虑到 非 R 用户、 R 用户和高级 R 用户
