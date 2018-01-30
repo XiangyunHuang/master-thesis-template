@@ -15,7 +15,4 @@ Imports:
     maps,
     mapdata,
     mapproj,
-    gridExtra,
-    geoR,
-    geoRglm,
-    PrevMap
+    gridExtra
