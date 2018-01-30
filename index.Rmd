@@ -23,35 +23,28 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 
 \pagenumbering{arabic}
 
+- 开发者注意：使用说明分 非 R 用户、 R 用户和高级 R 用户
+
+壮士使用时，请先删除本文档开头的三行
+
+```
+title: "中国矿业大学（北京）硕士学位论文模板"
+author: "某壮士制作"
+date: "`r Sys.Date()`"
+```
+
+- 安装 R
+- 安装 RStudio
+- 安装 R 包
+- 安装 TinyTeX 发行版
+
+安装编译 PDF 需要的 TeX 包
+
+```
+tlmgr install fancyhdr psnfss pdfpages fontinst times helvetic dvips
+```
+
 本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
-
-- 模板框架（完成）
-- 字体设置（完成）
-- 附录设置（完成）
-- 页眉页脚（完成）
-- 目录设置（完成）
-- 章节样式（完成） 
-- 参考文献（完成）
-
-已经审查如下部分
-
-- 字距
-- 行距
-- 字号（章节、段落等）
-- 段前段后行距 
-- 封面 
-- 授权页
-- 摘要
-
-比如数字，字母的字体设置： 正文、页眉数字用 Times New Roman， 一级标题（章）数字用 Arial，二级（节）、三级标题（小节）数字用 Times New Roman
-
-下面的等自己的论文搞定后再做
-
-- 数学公式、插图排版格式（请见 bookdown 官方文档或者）
-- 图的格式要求：图中数字、中英文字体设置（参看学校模板要求，这是绘图要求，本不在此模板范围内）
-- 模板使用说明（有时间再做）
-
-参考文献标准 GB/T 7714\-2015，而我校还在使用 2005 版，不过就我校的格式要求来看没什么区别，因此从 [thuthesis](https://github.com/xueruini/thuthesis) 模板拷贝了参考文献样式设置文件 `thuthesis-numeric.bst`
 
 模板文件目前基于 `rticles`包的 `ctex`修改得到，请安装
 
@@ -59,13 +52,16 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 devtools::install_github('XiangyunHuang/rticles')
 ```
 
-以后会考虑使用Pandoc默认的模板 <https://github.com/jgm/pandoc-templates/blob/master/default.latex>，如果 rmarkdown 、rticles 针对pandoc模板更新的话
+以后会考虑使用 Pandoc 默认的模板^[<https://github.com/jgm/pandoc-templates/blob/master/default.latex>]。模板已经在 Windows 和 Linux (Ubuntu/CentOS) 测试过，请放心使用，如果还有我没注意到的格式问题，请提 issues 或者 PR。
 
 
 ## 插图
 
-图中字体为宋体，5号，数字、字母一律 Times New Roman
-图名字体设置同上
+学校模板要求图中字体为宋体，5号，数字、字母一律 Times New Roman，图名字体采取同样设置，先来查看 pdf 图形设备自带的字体支持
+
+```{r}
+names(pdfFonts())
+```
 
 ```r
 ## base plot 请使用 pdf 而不是 cairo_pdf
@@ -83,19 +79,13 @@ dev.off()
 knitr::include_graphics(path = 'figures/base-plot-fontset-cairo-pdf.pdf')
 ```
 
-pdf 图形设备自带的字体支持
-
-```{r}
-names(pdfFonts())
-```
-
 还可以插入 bash 
 
 ```{bash}
 tlmgr list --only-installed | head -n 6 # 列出安装的 TeX 包 
 ```
 
-借助 [showtext](https://github.com/yixuan/showtext) 包可以获得更加精确的字体定制，
+借助 [showtext](https://github.com/yixuan/showtext) 包可以获得更多的字体定制，
 
 ```{r font-add}
 library(showtext) # 加载 showtext 包
@@ -105,7 +95,7 @@ font_families() # 查看可供用showtext使用的字体
 
 使用新添加的思源字体
 
-```{r fiji,fig.width=8,fig.height=6}
+```{r fiji,echo=FALSE,fig.width=8,fig.height=6,fig.cap='ggplot2绘图'}
 library(maps)
 library(mapdata)
 library(ggplot2)
@@ -126,21 +116,19 @@ ggplot(FijiMap, aes(x = long, y = lat)) +
         legend.position = c(1,0), legend.justification = c(1,0))
 ```
 
-
-
 ### 绘图的正确姿势 
 
 壮士论文中的图大多是 Base R 风格，以 `plot` 为核心，辅之以 `par`（全局版式）、 `(m)text`（添加文本）、`title`（标题）、`legend`（图例）、`axis` （坐标轴）等精调函数，打造出版级的图形，这种代码有两个极其优良的特点：执行效率高和高稳定性。
 
 但是，看似越简单的东西实现起来越复杂，下面这个例子摘自 [Jumping Rivers](http://blog.jumpingrivers.com/posts/2018/2018-01-24-base-r-graphics/)，想画好不容易的，壮士慢慢体会从图 \@ref(fig:iris-plot) 到图 \@ref(fig:pretty-iris)的区别，另外有一份来自统计之都的资料---[漫谈条形图](https://cosx.org/2017/10/discussion-about-bar-graph/)，值得一读。
 
-```{r iris-plot,fig.cap='散点图的错误示范'}
+```{r iris-plot,echo=FALSE,fig.cap='散点图的错误示范'}
 with(iris, {
   plot(Sepal.Length, Sepal.Width, col = Species, main = '鸢尾花数据')
   legend("topright", legend = levels(Species), col = 1:3, pch = 21)
 })
 ```
-```{r pretty-iris,fig.cap='基本正确的绘图姿势'}
+```{r pretty-iris,fig.cap='基本正确的绘图姿势',echo=FALSE}
 ## Same as geom_jitter
 iris$Sepal.Length = jitter(iris$Sepal.Length)
 iris$Sepal.Width = jitter(iris$Sepal.Width)
@@ -177,7 +165,7 @@ title("The infamous IRIS data", adj = 1,
 
 再来一个 Base R 风格的集合，如图 \@ref(fig:plot-object)所示，包含时间序列图、散点图、条形图、直方图等
 
-```{r plot-object,fig.cap='plot对象集合',out.width = '\\textwidth'}
+```{r plot-object,fig.cap='plot对象集合',out.width = '\\textwidth',echo=FALSE}
 layout(matrix(seq(6), 2, 3, byrow = TRUE))
 op <- par(mar=c(2,2,.5,.5))
 # 分类散点图
@@ -217,7 +205,7 @@ box(col="gray")
 - 配色是使图形高大上的重要一环，此处资料参看 [colors in plot](https://github.com/XiangyunHuang/colors-in-plots)
 - 一些基础的简单图形还是建议使用 [ggplot2](https://github.com/tidyverse/ggplot2)，一份 ggplot2 风格的绘图集合，请看网页 <http://www.ggplot2-exts.org/> ，下面还是以散点图为例，壮士可以比较图 \@ref(fig:base-ggplot) 和图 \@ref(fig:pretty-iris) 的细节差别。
 
-```{r base-ggplot,fig.cap='散点图'}
+```{r base-ggplot,fig.cap='散点图',echo=FALSE}
 library(ggplot2)
 ggplot(iris, aes( Sepal.Length, Sepal.Width ) ) + 
   geom_point( aes( colour = Species ) ) +
