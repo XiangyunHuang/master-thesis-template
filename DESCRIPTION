@@ -14,4 +14,8 @@ Imports:
     ggplot2,
     maps,
     mapdata,
-    mapproj
+    mapproj,
+    gridExtra,
+    geoR,
+    geoRglm,
+    PrevMap
