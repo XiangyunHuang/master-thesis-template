@@ -21,7 +21,7 @@ before_install:
 - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
 
 script:
-- Rscript -e 'bookdown::render_book("index.Rmd",output_format = "bookdown::pdf_book")'
+- Rscript -e 'bookdown::render_book("index.Rmd",output_format = "all")'
 
 deploy:
   provider: script
