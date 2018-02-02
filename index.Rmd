@@ -29,15 +29,11 @@ knitr::opts_chunk$set(
 
 \pagenumbering{arabic}
 
-- 基于 Docker 的工作环境
-
-__优点：不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境__
-
-- 使用介绍请看 <https://github.com/XiangyunHuang/BDAR/blob/master/VBOX4DS/VE4DS.Rmd> 和 <https://github.com/XiangyunHuang/BDAR/blob/master/R2Docker/rocker.Rmd>
+基于 Docker 的工作环境不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境，使用介绍请看 <https://github.com/XiangyunHuang/BDAR/blob/master/VBOX4DS/VE4DS.Rmd> 和 <https://github.com/XiangyunHuang/BDAR/blob/master/R2Docker/rocker.Rmd>
 
 **壮士使用本模板时，请先删除本文档开头的三行**
 
-```
+```yaml
 title: "中国矿业大学（北京）硕士学位论文模板"
 author: "某壮士制作"
 date: "`r Sys.Date()`"
