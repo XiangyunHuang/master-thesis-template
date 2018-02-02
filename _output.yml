@@ -4,9 +4,7 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./">矿大（北京）硕士论文模板</a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">由bookdown发布</a></li>
-    download: ["pdf", "epub"]
+    download: ["pdf"]
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
@@ -21,6 +19,5 @@ bookdown::pdf_book:
   toc_unnumbered: yes
   toc_appendix: no
   toc_bib: yes
-  base_format: rticles::ctex
+  template: latex/default.latex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
-bookdown::epub_book: default
