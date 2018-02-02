@@ -1,4 +1,7 @@
 --- 
+title: "中国矿业大学（北京）硕士学位论文模板"
+author: "某壮士制作"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
@@ -11,32 +14,38 @@ colorlinks: yes
 ---
 
 ```{r setup,include=FALSE}
-options(digits = 3)
-knitr::opts_chunk$set(
-  comment = "#>",
-  echo = FALSE,
-  collapse = TRUE,
-  cache = TRUE,
-  out.width = "70%",
-  fig.align = 'center',
-  fig.width = 6,
-  fig.asp = 0.618,  # 1 / phi
-  fig.show = "hold"
-)
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
+                      fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
+                      out.width = '.7\\textwidth')
 ```
 
 # 引言
 
 \pagenumbering{arabic}
 
-基于 Docker 的工作环境不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境，使用介绍请看 <https://github.com/XiangyunHuang/BDAR/blob/master/VBOX4DS/VE4DS.Rmd> 和 <https://github.com/XiangyunHuang/BDAR/blob/master/R2Docker/rocker.Rmd>
+## 基于 Docker 的工作环境
 
-**壮士使用本模板时，请先删除本文档开头的三行**
+__优点：不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境__
 
-```yaml
+- 开发者注意：使用说明考虑到 非 R 用户、 R 用户和高级 R 用户
+
+壮士使用时，请先删除本文档开头的三行
+
+```
 title: "中国矿业大学（北京）硕士学位论文模板"
 author: "某壮士制作"
 date: "`r Sys.Date()`"
+```
+
+- 安装 R
+- 安装 RStudio
+- 安装 R 包
+- 安装 TinyTeX 发行版
+
+安装编译 PDF 需要的 TeX 包
+
+```
+tlmgr install fancyhdr psnfss pdfpages fontinst times helvetic dvips tlgs.win32 symbol rsfs
 ```
 
 本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
@@ -52,7 +61,7 @@ devtools::install_github('XiangyunHuang/rticles')
 
 ## 插图
 
-学校模板要求图中字体为宋体，5号，数字、字母一律 Times New Roman，图名字体采取同样设置
+学校模板要求图中字体为宋体，5号，数字、字母一律 Times New Roman，图名字体采取同样设置，先来查看 pdf 图形设备自带的字体支持
 
 ```r
 ## base plot 请使用 pdf 而不是 cairo_pdf
@@ -66,6 +75,24 @@ with(iris, {
 dev.off()
 ```
 
+### 代码块
 
+代码块设置
+
+```{r,collapse=TRUE}
+1 + 2
+set.seed(2018)
+rnorm(5)
+set.seed(2018)
+diag(rnorm(5))
+```
+
+## 软件信息
+
+编译环境
+
+```{r}
+sessionInfo()
+```
 
 
