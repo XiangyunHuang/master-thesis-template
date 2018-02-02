@@ -12,8 +12,6 @@ before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
 - npm install netlify-cli -g
-- tlmgr update --all --self
-- tlmgr install ctex xecjk zhnumber fandol
 
 script:
 - Rscript -e 'devtools::install_github("XiangyunHuang/rticles");bookdown::render_book("index.Rmd", output_format = "all")'
