@@ -16,10 +16,10 @@
   chapter/name = {,},
   chapter/number = \arabic{chapter},
   chapter/numberformat = \sf, % 数字字体 Arial
-  chapter/beforeskip = 12pt,
+  chapter/beforeskip = 12pt, % 标题前后的间距
   chapter/afterskip = 18pt,
+  chapter/fixskip = true, % 标题与正文的距离
   chapter/format += \sf\zihao{3},  % 一级标题
-  chapter/fixskip = true,
   section/numberformat = \rm,    
   section/format += \sf\zihao{4}\raggedright, % 二级标题
   subsection/numberformat = \rm,   
@@ -27,6 +27,8 @@
   contentsname = {目\quad 录},
   % bibname      = {参\quad 考\quad 文\quad 献},
 }
+
+\setlength\parindent{40pt} % 段首缩进40点 即两个汉字
 
 % 定义一般页面的页眉和页脚
 \usepackage{fancyhdr}
