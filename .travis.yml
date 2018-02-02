@@ -12,7 +12,7 @@ addons:
   apt:
     packages:
       - ghostscript
-
+      
 before_install:
 - mkdir ~/.R
 - cp Makevars ~/.R
