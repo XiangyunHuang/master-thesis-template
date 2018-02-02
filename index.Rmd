@@ -22,27 +22,13 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 
 ## 基于 Docker 的工作环境
 
-__优点：不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境__
-
-- 开发者注意：使用说明考虑到 非 R 用户、 R 用户和高级 R 用户
-
-壮士使用时，请先删除本文档开头的三行
-
-```
-title: "中国矿业大学（北京）硕士学位论文模板"
-author: "某壮士制作"
-date: "`r Sys.Date()`"
-```
-
-- 安装 R
-- 安装 RStudio
-- 安装 R 包
-- 安装 TinyTeX 发行版
+优点：不需要自己安装 R、RStudio、LaTeX 发行版、Git、TeX 包和 R 包以及配置环境
 
 安装编译 PDF 需要的 TeX 包
 
 ```
-tlmgr install fancyhdr psnfss pdfpages fontinst times helvetic dvips tlgs.win32 symbol rsfs
+tlmgr install fancyhdr psnfss pdfpages \
+   fontinst times helvetic dvips tlgs.win32 symbol rsfs
 ```
 
 本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
@@ -54,42 +40,3 @@ devtools::install_github('XiangyunHuang/rticles')
 ```
 
 以后会考虑使用 Pandoc 默认的模板^[<https://github.com/jgm/pandoc-templates/blob/master/default.latex>]。模板已经在 Windows 和 Linux (Ubuntu/CentOS) 测试过，请放心使用，如果还有我没注意到的格式问题，请提 issues 或者 PR。
-
-
-## 插图
-
-学校模板要求图中字体为宋体，5号，数字、字母一律 Times New Roman，图名字体采取同样设置，先来查看 pdf 图形设备自带的字体支持
-
-```r
-## base plot 请使用 pdf 而不是 cairo_pdf
-pdf(file = 'base-plot-fontset-cairo-pdf.pdf')
-with(iris, {
-  par(family = 'Times')
-  plot(Sepal.Length, Sepal.Width, col = Species, family = 'Times')
-  title(main = '鸢尾花数据', family = "GB1")
-  legend("topright", legend = levels(Species), col = 1:3, pch = 21)
-})
-dev.off()
-```
-
-### 代码块
-
-代码块设置
-
-```{r,collapse=TRUE}
-1 + 2
-set.seed(2018)
-rnorm(5)
-set.seed(2018)
-diag(rnorm(5))
-```
-
-## 软件信息
-
-编译环境
-
-```{r}
-sessionInfo()
-```
-
-
