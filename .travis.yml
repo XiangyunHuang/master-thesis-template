@@ -16,7 +16,7 @@ before_install:
 - tlmgr install ctex xecjk zhnumber fandol
 
 script:
-- Rscript -e 'devtools::install_github("XiangyunHuang/rticles");bookdown::render_book("index.Rmd");bookdown::render_book(input = "index.Rmd",output_format = "bookdown::pdf_book");bookdown::render_book(input = "index.Rmd",output_format = "bookdown::epub_book")'
+- Rscript -e 'devtools::install_github("XiangyunHuang/rticles");bookdown::render_book("index.Rmd", output_format = "all")'
 
 deploy:
   provider: script
