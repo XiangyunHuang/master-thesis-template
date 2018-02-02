@@ -1,7 +1,4 @@
 --- 
-title: "中国矿业大学（北京）硕士学位论文模板"
-author: "某壮士制作"
-date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
