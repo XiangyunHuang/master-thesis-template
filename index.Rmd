@@ -2,8 +2,8 @@
 site: bookdown::bookdown_site
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
-classoption: "notitlepage, hyperref, a4paper, UTF8, zihao = -4, linespread = 1.25"
-bibliography: [book.bib, packages.bib, articles.bib]
+classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3"
+bibliography: [refer.bib]
 biblio-style: thuthesis-numeric
 natbiboptions: super,square
 link-citations: yes
@@ -14,24 +14,14 @@ colorlinks: yes
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
                       fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
                       out.width = '.7\\textwidth')
+library(ggplot2)
+theme_set(theme_minimal())
 ```
 
-# 引言
+# 绪论/引言/背景
 
 \pagenumbering{arabic}
 
-## 基于 Docker 的工作环境
-
-
-```
-
-本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
-
-模板文件目前基于 `rticles`包的 `ctex`修改得到，请安装
-
-```r
-devtools::install_github('XiangyunHuang/rticles')
-```
-
-以后会考虑使用 Pandoc 默认的模板^[<https://github.com/jgm/pandoc-templates/blob/master/default.latex>]。模板已经在 Windows 和 Linux (Ubuntu/CentOS) 测试过，请放心使用，如果还有我没注意到的格式问题，请提 issues 或者 PR。
-
+- 解决（做）了什么问题，为什么做这个问题，是怎么做的，写发表的文章的三步走
+What How
+- 从 kriging 克里金插值到高斯过程，简单介绍提出本文的大纲思路

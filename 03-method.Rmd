@@ -1,3 +1,43 @@
-# 算法实现 {#methods}
+# 算法描述 {#methods}
 
-We describe our methods in this chapter.
+## 贝叶斯方法
+
+1998年 Diggle 等人最早提出基于模型的地统计学框架，将高斯空间随机过程和（广义）线性混合模型结合应用到空间流行病数据分析中，通过贝叶斯推断方法进行参数估计和预测[@Diggle1998]。
+
+2002年 Diggle 等人使用空间广义线性混合模型分析冈比亚儿童疟疾的数据，在贝叶斯框架下，通过 Metropolis-Hastings 算法实现MCMC（马尔科夫链蒙特卡罗）方法进行参数估计和模型预测[@Diggle2002]。
+
+
+
+一元和多元时空模型`spBayes`包 [@spBayes2015]
+用于对MCMC的收敛性诊断和输出分析 [@coda2006]
+geoR: 用于空间数据分析和预测的贝叶斯方法 [@geoR2001]
+geoRglm: 空间广义线性混合效应模型 [@geoRglm2002]
+brms [@brms2017JSS]
+gstat [@gstat2016]
+
+glmmBUGS RStan 实现MCMC 
+
+
+```r
+library(coda)
+library(MCMCvis)
+```
+
+`MCMCvis`包[@R-MCMCvis]提取MCMC算法输出的结果并可视化，产生出版级的图形，提取模型参数等指标，支持诸如JAGS、Stan等软件求解贝叶斯模型的输出结果。
+
+Stan 是一种概率编程语言[@Stan2017JSS]，可以替代 BUGS ( **B**ayesian inference **U**sing **G**ibbs **S**ampling ) [@BUGS] 作为 MCMC 的高效实现，可用于贝叶斯框架下，标准地统计模型的参数估计，Stan 提供多种语言的接口实现，方便起见，本文采用它提供的 R 语言接口 -- rstan 包 [@Stan2015;@Stan2017JSS]。此外，还有[@rethinking2015]  　
+
+
+## 最大似然方法
+
+由于贝叶斯方法构造MCMC链，需要很多次反复迭代，收敛速度慢，求解模型\eqref{eq:SGLMM}需要花费很多时间，将最大似然和重要性采样相结合的方法出现了，称之为蒙特卡罗最大似然法，简称 MCML
+
+最大似然 [@PrevMap2017] 将 MCML 和 MCMC 方法应用于空间广义线性混合效应模型的参数估计和预测，
+
+mgcv and JAGS
+
+
+## 拉普拉斯近似方法
+
+方法 [@Rue2017arXiv]
+
