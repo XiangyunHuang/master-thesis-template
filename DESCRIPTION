@@ -17,3 +17,6 @@ Imports:
     mapdata,
     mapproj,
     gridExtra
+Remotes: 
+    XiangyunHuang/rticles
+

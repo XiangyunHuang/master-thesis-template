@@ -24,10 +24,10 @@
   chapter/name = {,},
   chapter/number = \arabic{chapter},
   chapter/numberformat = \sf, % 数字字体 Arial
-  chapter/beforeskip = 12pt,
+  chapter/beforeskip = 12pt, % 标题前后的间距
   chapter/afterskip = 18pt,
+  chapter/fixskip = true, % 标题与正文的距离
   chapter/format += \sf\zihao{3},  % 一级标题
-  chapter/fixskip = true,
   section/numberformat = \rm,    
   section/format += \sf\zihao{4}\raggedright, % 二级标题
   subsection/numberformat = \rm,   
@@ -36,12 +36,14 @@
   % bibname      = {参\quad 考\quad 文\quad 献},
 }
 
+\setlength\parindent{40pt} % 段首缩进40点 即两个汉字
+
 % 定义一般页面的页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 % 设置文武线
-\renewcommand{\headrule}{\hrule height1pt width\headwidth \vspace{1.5pt}\hrule width\headwidth}
+\renewcommand{\headrule}{\hrule height1pt width\headwidth \vspace{3.0pt}\hrule width\headwidth}
 % 设置左页页眉
 \fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文} % 左页也是奇数页 
 % 设置右页页眉
