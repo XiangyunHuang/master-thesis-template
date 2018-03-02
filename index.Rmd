@@ -22,21 +22,7 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
 
 ## 基于 Docker 的工作环境
 
-- 开发者注意：使用说明考虑到 非 R 用户、 R 用户和高级 R 用户
 
-壮士使用时，请先删除本文档开头的三行
-
-```yaml
-title: "中国矿业大学（北京）硕士学位论文模板"
-author: "某壮士制作"
-date: "`r Sys.Date()`"
-```
-
-安装编译 PDF 需要的 TeX 包
-
-```bash
-tlmgr install fancyhdr psnfss pdfpages fontinst \
-   times helvetic dvips tlgs.win32 symbol rsfs
 ```
 
 本模板基于 bookdown 制作，得益于 pandoc，有关如何在线发布书籍，请看文献 [@bookdown2016CRC] 第六章，以及文献 [@blogdown2017CRC] 第三章。这个模板说明最终将会在线发布，点击页面左上角的下载按钮可获得本文的 PDF 或者 EPUB 电子版。
@@ -48,5 +34,4 @@ devtools::install_github('XiangyunHuang/rticles')
 ```
 
 以后会考虑使用 Pandoc 默认的模板^[<https://github.com/jgm/pandoc-templates/blob/master/default.latex>]。模板已经在 Windows 和 Linux (Ubuntu/CentOS) 测试过，请放心使用，如果还有我没注意到的格式问题，请提 issues 或者 PR。
-
 
