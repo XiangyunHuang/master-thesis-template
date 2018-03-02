@@ -19,5 +19,5 @@ bookdown::pdf_book:
   toc_unnumbered: yes
   toc_appendix: no
   toc_bib: yes
-  template: latex/default.latex
+  base_format: rticles::ctex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
