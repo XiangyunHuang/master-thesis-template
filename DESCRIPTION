@@ -13,5 +13,10 @@ Imports:
     showtext,
     ggplot2,
     maps,
+    rticles,
     mapdata,
-    mapproj
+    mapproj,
+    gridExtra
+Remotes: 
+    XiangyunHuang/rticles
+

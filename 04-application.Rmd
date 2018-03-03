@@ -1,3 +1,71 @@
+# 数值模拟
+
+`RandomFields`是模拟多元随机场的 \Rr{} 包 [@RandomFields2015]， `geoR` 包[@R-geoR2016]的 `grf` 函数只适合模拟少量数据点
+
+分泊松、二项两种情况、上述3种方法，在空间广义线性混合效应模型下的模拟情况（使用标准的地统计模型，无时间项和混合分布）
+
+## 响应变量服从二项分布的情形
+
+模型形式如方程 \eqref{eq:SGPSM}所示，也称为标准地统计流行抽样模型（Standard Geostatistical Prevalence Sampling Model）
+\begin{equation}
+\log[p(x_i)/\{1-p(x_i)\}] = d(x_i)'\beta + S(x_i) + Z_i \label{eq:SGPSM}
+\end{equation}
+其中 $\bm{S} = \{S(x):x \in \mathbb{R}^2\}$
+
+
+## 响应变量服从泊松分布的情形
+
+模型形式如方程 \eqref{eq:SGPSM2} 所示
+\begin{equation}
+\log[\lambda(x_i)] = d(x_i)'\beta + S(x_i) + Z_i \label{eq:SGPSM2}
+\end{equation}
+
+
+```{r matern, fig.width = 6, fig.height = 5,echo=FALSE,cache=TRUE}
+source('code/02-Matern-function.R') 
+```
+
+从蓝到红，值由小变大
+
+## 模拟二项分布数据集
+
+此处模拟数据集 `data_sim` 来自 `PrevMap` 包，零均值高斯过程 单元格上 $30 \times 30$ 参数 
+$\sigma^2 = 1, \phi = 0.15, \kappa =  2$，块金效应 (nugget effect) $\tau^2 = 0$，每个格点上重复实验10次，得到响应变量二项分布的概率值
+
+
+```{r low-rank,fig.cap="数值模拟",fig.pos="!htb"}
+knitr::include_graphics("figures/simulation.pdf")
+```
+
+# 案例分析
+
+## 冈比亚疟疾流行度分析
+
+贝叶斯方法
+二项分布
+
+## 西非 Loa loa 眼线虫病流行度分析
+
+二项分布
+MCML 和 低秩近似 贝叶斯
+
+## Rongle 核污染浓度分布
+
+泊松分布
+
+## 城市重金属污染浓度分布
+
+
+响应变量是高斯
+
+As 浓度 海拔 区域
+
+广义线性模型  带分类变量
+
+空间高斯分布
+
+
+
 # 数据分析
 
 Some _significant_ applications are demonstrated in this chapter.
