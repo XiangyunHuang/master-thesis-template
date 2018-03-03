@@ -1,17 +1,28 @@
 % 设置英文字体 Times New Roman 的等价字体
 % Windows
-% \usepackage[T1]{fontenc}
-% \usepackage{mathptmx}
-% Linux
-\usepackage[OT1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{mathptmx}
+% Linux
+% \usepackage[OT1]{fontenc}
+% \usepackage{mathptmx}
+
+% math
+\usepackage{mathrsfs}        
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+% \usepackage{epsfig}
+% \usepackage{subfigure}
+% \usepackage{subfigure}
+% \usepackage{multirow}
+% \usepackage{colortbl}
 
 % 为了使用 Arial 字体，用于章节前的数字
 \renewcommand{\sfdefault}{phv}
 
 
 % 自定义几个命令
-\newcommand{\bm}{\boldsymbol}
+% \newcommand{\bm}{\boldsymbol}
 \newcommand{\pr}{\hbox{\sf P}}
 \newcommand{\Rr}{\hbox{\sf R}}
 \newcommand{\var}{\hbox{\sf Var}\,}

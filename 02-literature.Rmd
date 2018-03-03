@@ -4,7 +4,7 @@
 
 线性模型的一般形式为
 \begin{equation}
-Y = X'\beta + \epsilon, \mathrm{E}(\epsilon) = 0, \mathrm{Cov}(\epsilon) = \sigma^2I \label{eq:LM}
+Y = X'\beta + \epsilon, \mathrm{E}(\epsilon) = 0, \mathrm{Cov}(\epsilon) = \sigma^2I (\#eq:LM)
 \end{equation}
 其中，$Y = (y_1,y_2,\cdots,y_n)'$ 是 $n$ 维列向量，代表对响应变量$Y$的$n$次重复观测；$\beta = (\beta_0,\beta_1,\cdots,\beta_{p-1})'$ 是 $p$ 维列向量，代表模型自变量 $X$ 的系数，$\beta_0$是截距项；
 $X' = (1_{(1\times n)}',X_{(1)}',X_{(2)}',\cdots,X_{(n)}')$，$1_{(1\times n)}'$ 是全1的$n$维列向量，而$X_{(i)}' = (x_{1i},x_{2i},\cdots,x_{ni})'$ 代表对第$i$个自变量的$n$次观测；
@@ -17,7 +17,7 @@ $\epsilon = (\epsilon_1,\epsilon_2,\cdots,\epsilon_n)'$是$n$ 维列向量，代
 \begin{equation}
 Y \sim \text{指数族} \quad
 \eta = X'\beta \quad
-\mathrm{E}(Y) = g^{-1}(\eta)  \label{eq:GLM}
+\mathrm{E}(Y) = g^{-1}(\eta)  (\#eq:GLM)
 \end{equation}
 简写之为
 \begin{equation*}
