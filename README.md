@@ -7,14 +7,5 @@
 ## 中国矿业大学（北京）硕士学位论文模板
 
 - 这是一个用 **bookdown** 写论文模板的例子。在使用它之前，建议您至少泛读一遍 [**bookdown** 官方文档](https://bookdown.org/yihui/bookdown)。
-
-- 论文模板源文件放在本仓库，基于 [netlify](https://www.netlify.com/) 部署，可以 [在线预览](https://cumtb-thesis-template.netlify.com/)，模板的PDF输出文件[见此](https://cumtb-thesis-template.netlify.com/master-thesis-template.pdf)
-
-- 使用之前请仔细阅读[模板说明](https://cumtb-thesis-template.netlify.com/)
-
-![img1](screenshots/master-thesis-template01.png)
-![img2](screenshots/master-thesis-template02.png)
-
-![img3](screenshots/master-thesis-template03.png)
-![img4](screenshots/master-thesis-template04.png)
-
+- 论文模板源文件放在本仓库，基于 [bookdown](https://bookdown.org/) 部署，可以 [在线预览](https://bookdown.org/xiangyun/master-thesis-template)，模板的PDF输出文件[见此](https://bookdown.org/xiangyun/master-thesis-template/master-thesis-template.pdf)
+- 使用之前请仔细阅读[模板说明](https://bookdown.org/xiangyun/master-thesis-template)
