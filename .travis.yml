@@ -1,0 +1,29 @@
+language: R
+sudo: false
+cache:
+  packages: true
+  directories:
+  - _bookdown_files
+  - $HOME/.npm
+
+pandoc_version: 2.1.1
+
+addons:
+  apt:
+    packages:
+      - ghostscript
+      
+before_install:
+- mkdir ~/.R
+- cp Makevars ~/.R
+- npm install netlify-cli -g
+- tlmgr update --all --self
+- tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
+
+script:
+- Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
+
+deploy:
+  provider: script
+  script: netlify deploy -t $NETLIFY_PAT
+  skip_cleanup: true

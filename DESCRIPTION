@@ -1,0 +1,19 @@
+Package: cumtb
+Title: cumtb thesis template
+Version: 1.0.0
+Authors@R: c(
+  person("Xiangyun", "Huang", , "xiangyunfaith@outlook.com", c("aut", "cre"))
+  )
+URL: https://github.com/XiangyunHuang/master-thesis-template
+Depends: 
+    R (>= 3.1.0)
+Imports: 
+    bookdown,
+    knitr,
+    showtext,
+    ggplot2,
+    maps,
+    rticles,
+    mapdata,
+    mapproj,
+    gridExtra
