@@ -1,4 +1,4 @@
-# 数值模拟
+# 数值模拟 {#simulations}
 
 `RandomFields`是模拟多元随机场的 R 包 [@RandomFields2015]， `geoR` 包[@R-geoR2016]的 `grf` 函数只适合模拟少量数据点
 
@@ -37,7 +37,7 @@ $\sigma^2 = 1, \phi = 0.15, \kappa =  2$，块金效应 (nugget effect) $\tau^2 
 knitr::include_graphics("figures/simulation.pdf")
 ```
 
-# 案例分析
+# 案例分析 {#cases}
 
 ## 冈比亚疟疾流行度分析
 
@@ -64,14 +64,3 @@ As 浓度 海拔 区域
 
 空间高斯分布
 
-
-
-# 数据分析
-
-Some _significant_ applications are demonstrated in this chapter.
-
-## 喀麦隆及周边地区眼线虫病的空间分布
-
-## 朗格拉普岛核爆炸残留物的空间分布
-
-## 冈比亚儿童疟疾的空间分布
