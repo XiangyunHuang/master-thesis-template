@@ -1,4 +1,4 @@
-# 算法描述 {#methods}
+# 算法描述 {#algorithms}
 
 ## 贝叶斯方法
 

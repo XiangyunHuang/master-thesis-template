@@ -1,19 +1,26 @@
 % 设置英文字体 Times New Roman 的等价字体
 % Windows
-% \usepackage[T1]{fontenc}
-% \usepackage{mathptmx}
-% Linux
-\usepackage[OT1]{fontenc}
-\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % or \usepackage{times}
+
+% math
+% \usepackage{mathrsfs}        
+\usepackage{bm}
+% \usepackage{amsfonts}
+% \usepackage{amsthm}
+% figure
+% \usepackage{epsfig}
+% \usepackage{subfigure}
+% \usepackage{subfigure}
+% \usepackage{multirow}
+% \usepackage{colortbl}
 
 % 为了使用 Arial 字体，用于章节前的数字
 \renewcommand{\sfdefault}{phv}
 
-
 % 自定义几个命令
-\newcommand{\bm}{\boldsymbol}
 \newcommand{\pr}{\hbox{\sf P}}
-\newcommand{\Rr}{\hbox{\sf R}}
+\newcommand{\ep}{\hbox{\sf E}}
 \newcommand{\var}{\hbox{\sf Var}\,}
 \newcommand{\cov}{\hbox{\sf Cov}\,}
 
@@ -33,11 +40,10 @@
   subsection/numberformat = \rm,   
   subsection/format += \sf\zihao{-4}\raggedright,  % 三级标题
   contentsname = {目\quad 录},
-  % bibname      = {参\quad 考\quad 文\quad 献},
 }
 
 \setlength\parindent{40pt} % 段首缩进40点 即两个汉字
-
+% 或者 \setlength\parindent{2em} 
 % 定义一般页面的页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}

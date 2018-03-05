@@ -1,10 +1,16 @@
 bookdown::gitbook:
-  css: style.css
   config:
     toc:
+      collapse: section
       before: |
-        <li><a href="./">矿大（北京）硕士论文模板</a></li>
-    download: ["pdf"]
+        <li><strong><a href="./">CUMTB Master Thesis</a></strong></li>
+    edit:
+      link: https://github.com/XiangyunHuang/master-thesis-template/edit/master/%s
+      text: "Edit"
+    download: [pdf]  
+    sharing: no
+  css: style.css
+
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
@@ -12,12 +18,12 @@ bookdown::pdf_book:
     after_body: latex/after_body.tex
   keep_tex: yes
   dev: "cairo_pdf"
-  latex_engine: xelatex
+  latex_engine: pdflatex
   citation_package: natbib
   pandoc_args: --top-level-division=chapter
   toc_depth: 4
   toc_unnumbered: yes
   toc_appendix: no
   toc_bib: yes
-  base_format: rticles::ctex
+  template: pandoc-templates/default.latex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]

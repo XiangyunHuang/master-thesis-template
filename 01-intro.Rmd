@@ -1,2 +1,14 @@
-# 论文综述 {#intro}
+# 绪论/引言/背景 {#background}
+
+- 解决（做）了什么问题，为什么做这个问题，是怎么做的，写发表的文章的三步走
+What How
+- 从 kriging 克里金插值到高斯过程，简单介绍提出本文的大纲思路
+
+
+
+线性模型的一般形式为
+\begin{equation}
+\bm{Y} = \bm{X}'\beta + \epsilon, \ep(\epsilon) = 0, \cov(\epsilon) = \sigma^2\bm{I} (\#eq:LM)
+\end{equation}
+
 

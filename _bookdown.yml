@@ -18,8 +18,4 @@ rmd_files: [
   "04-application.Rmd",
   "05-summary.Rmd",
   "06-references.Rmd",
-  
-#  "07-thanks.Rmd",
-#  "08-author.Rmd",
-#  "09-appendix.Rmd",  
 ]

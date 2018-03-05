@@ -1,6 +1,6 @@
-# 数值模拟
+# 数值模拟 {#simulations}
 
-`RandomFields`是模拟多元随机场的 \Rr{} 包 [@RandomFields2015]， `geoR` 包[@R-geoR2016]的 `grf` 函数只适合模拟少量数据点
+`RandomFields`是模拟多元随机场的 R 包 [@RandomFields2015]， `geoR` 包[@R-geoR2016]的 `grf` 函数只适合模拟少量数据点
 
 分泊松、二项两种情况、上述3种方法，在空间广义线性混合效应模型下的模拟情况（使用标准的地统计模型，无时间项和混合分布）
 
@@ -37,19 +37,19 @@ $\sigma^2 = 1, \phi = 0.15, \kappa =  2$，块金效应 (nugget effect) $\tau^2 
 knitr::include_graphics("figures/simulation.pdf")
 ```
 
-# 案例分析
+# 案例分析 {#cases}
 
-## 冈比亚疟疾流行度分析
+## 冈比亚儿童疟疾的空间分布
 
 贝叶斯方法
 二项分布
 
-## 西非 Loa loa 眼线虫病流行度分析
+## 喀麦隆及周边地区眼线虫病的空间分布
 
 二项分布
 MCML 和 低秩近似 贝叶斯
 
-## Rongle 核污染浓度分布
+## 朗格拉普岛核爆炸残留物的空间分布
 
 泊松分布
 
@@ -64,14 +64,3 @@ As 浓度 海拔 区域
 
 空间高斯分布
 
-
-
-# 数据分析
-
-Some _significant_ applications are demonstrated in this chapter.
-
-## 喀麦隆及周边地区眼线虫病的空间分布
-
-## 朗格拉普岛核爆炸残留物的空间分布
-
-## 冈比亚儿童疟疾的空间分布
