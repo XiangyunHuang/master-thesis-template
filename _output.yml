@@ -1,10 +1,3 @@
-bookdown::gitbook:
-  css: style.css
-  config:
-    toc:
-      before: |
-        <li><a href="./">矿大（北京）硕士论文模板</a></li>
-    download: ["pdf"]
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex

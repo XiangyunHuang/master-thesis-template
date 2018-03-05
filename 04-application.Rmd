@@ -1,6 +1,6 @@
 # 数值模拟
 
-`RandomFields`是模拟多元随机场的 \Rr{} 包 [@RandomFields2015]， `geoR` 包[@R-geoR2016]的 `grf` 函数只适合模拟少量数据点
+`RandomFields`是模拟多元随机场的 R 包 [@RandomFields2015]， `geoR` 包[@R-geoR2016]的 `grf` 函数只适合模拟少量数据点
 
 分泊松、二项两种情况、上述3种方法，在空间广义线性混合效应模型下的模拟情况（使用标准的地统计模型，无时间项和混合分布）
 
