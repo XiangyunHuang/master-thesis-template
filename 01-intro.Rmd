@@ -8,7 +8,7 @@ What How
 
 线性模型的一般形式为
 \begin{equation}
-\bm{Y} = \bm{X}'\beta + \epsilon, \ep(\epsilon) = 0, \cov(\epsilon) = \sigma^2\bm{I} (\#eq:LM)
+Y = X'\beta + \epsilon, \ep(\epsilon) = 0, \cov(\epsilon) = \sigma^2 I (\#eq:LM)
 \end{equation}
 
 

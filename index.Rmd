@@ -8,7 +8,6 @@ geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
 classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3"
 bibliography: [refer.bib]
 biblio-style: natbib
-natbiboptions: super,square
 link-citations: yes
 colorlinks: yes
 ---
@@ -28,11 +27,11 @@ theme_set(theme_minimal())
 文中所用数学符号列表如下：
 
 - 概率 \pr ，期望 \ep，方差 $\var(x)$ 和 协方差 $\cov(x,y)$
-- $\bm{X},\bm{Y}$ 表示矩阵
+- $X$ 表示矩阵
 - $X,Y$ 表示向量（张量）
 - $x,y$ 表示元素，如 $x_{ij},y_{ij}$
-- $\bm{I}$ 单位矩阵
-- $\bm{I}_{n}$ $n \times n$ 的单位矩阵
+- $I$ 单位矩阵
+- $I_{n}$ 表示 $n \times n$ 的单位矩阵
 
 \begin{minipage}{\textwidth}
 \centerline{\bf 数字和数组}
