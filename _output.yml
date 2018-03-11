@@ -7,7 +7,7 @@ bookdown::gitbook:
     edit:
       link: https://github.com/XiangyunHuang/master-thesis-template/edit/master/%s
       text: "Edit"
-    download: [pdf]  
+    download: ["pdf"]  
     sharing: no
   css: style.css
 
