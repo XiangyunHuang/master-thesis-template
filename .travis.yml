@@ -5,6 +5,7 @@ cache:
   directories:
   - _bookdown_files
   - $HOME/.npm
+  - $HOME/texlive
 
 pandoc_version: 2.1.1
 
