@@ -18,12 +18,12 @@ bookdown::pdf_book:
     after_body: latex/after_body.tex
   keep_tex: yes
   dev: "cairo_pdf"
-  latex_engine: pdflatex
+  latex_engine: xelatex
   citation_package: natbib
   pandoc_args: --top-level-division=chapter
   toc_depth: 4
   toc_unnumbered: yes
   toc_appendix: no
   toc_bib: yes
-  template: pandoc-templates/default.latex
+  base_format: rticles::ctex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
