@@ -1,7 +1,7 @@
 --- 
 site: bookdown::bookdown_site
-title: "空间广义线性混合效应模型及其应用"
-subtitle: "中国矿业大学（北京）"
+title: "XXXX"
+subtitle: "XXX"
 author: "xx"
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
