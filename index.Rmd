@@ -1,8 +1,5 @@
 --- 
 site: bookdown::bookdown_site
-title: "XXXX"
-subtitle: "XXX"
-author: "xx"
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
 classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3"
