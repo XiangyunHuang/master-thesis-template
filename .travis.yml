@@ -17,7 +17,7 @@ addons:
 before_install:
   - npm install netlify-cli -g
   - tlmgr update --all --self
-  - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
+  - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math bm
 
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
