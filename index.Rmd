@@ -1,10 +1,8 @@
 --- 
 site: bookdown::bookdown_site
-title: "Master Thesis Template"
-author: "Xiangyun Huang"  
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
-classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3, oneside"
+classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3"
 bibliography: [refer.bib]
 natbiboptions: super,square
 biblio-style: natbib
@@ -13,7 +11,7 @@ colorlinks: yes
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.align = 'center',
+knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
                       fig.showtext = ifelse(.Platform$OS.type != 'unix',FALSE,TRUE),
                       out.width = '.7\\textwidth')
 library(ggplot2)
