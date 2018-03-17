@@ -10,7 +10,7 @@
 \begin{equation}
 \log[p(x_i)/\{1-p(x_i)\}] = d(x_i)'\beta + S(x_i) + Z_i \label{eq:SGPSM}
 \end{equation}
-其中 $\bm{S} = \{S(x):x \in \mathbb{R}^2\}$
+其中 $\mathcal{S} = \{S(x):x \in \mathbb{R}^2\}$
 
 
 ## 响应变量服从泊松分布的情形

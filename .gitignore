@@ -50,7 +50,3 @@ rsconnect
 *_files/
 
 # do not upload follow two folders
-
-R/
-dissertation-defense/
-latex-manuals/

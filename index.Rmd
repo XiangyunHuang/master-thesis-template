@@ -23,9 +23,9 @@ theme_set(theme_minimal())
 
 文中所用数学符号列表如下：
 
-- 概率 \pr ，期望 \ep，方差 $\var(x)$ 和 协方差 $\cov(x,y)$
+- 概率 $\mathsf{P}$ ，期望 $\mathsf{E}$，方差 $\mathsf{Var}(x)$ 和 协方差 $\mathsf{Cov}(x,y)$
 - $X$ 表示矩阵
-- $X,Y$ 表示向量（张量）
+- $\mathsf{X,Y}$ 表示向量（张量）
 - $x,y$ 表示元素，如 $x_{ij},y_{ij}$
 - $I$ 单位矩阵
 - $I_{n}$ 表示 $n \times n$ 的单位矩阵

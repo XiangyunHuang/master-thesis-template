@@ -20,10 +20,11 @@ bookdown::pdf_book:
   dev: "cairo_pdf"
   latex_engine: xelatex
   citation_package: natbib
-  pandoc_args: --top-level-division=chapter
+  pandoc_args: "--top-level-division=chapter"
   toc_depth: 4
   toc_unnumbered: yes
   toc_appendix: no
   toc_bib: yes
-  base_format: rticles::ctex
+  template: pandoc-templates/default.latex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
+bookdown::epub_book: default
