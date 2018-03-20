@@ -7,8 +7,10 @@ bookdown::gitbook:
     edit:
       link: https://github.com/XiangyunHuang/master-thesis-template/edit/master/%s
       text: "Edit"
-    download: ["pdf"]  
-    sharing: no
+    download: ["pdf", "epub"]
+    sharing:
+      github: yes
+      facebook: no
   css: style.css
 
 bookdown::pdf_book:
