@@ -13,6 +13,7 @@ addons:
   apt:
     packages:
       - ghostscript
+      - fonts-liberation
       
 before_install:
   - npm install netlify-cli -g
