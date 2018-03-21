@@ -1,13 +1,8 @@
 --- 
 site: bookdown::bookdown_site
-title: "空间广义线性混合效应模型及其应用"
-subtitle: "理学院2015级硕士学位论文"
-institute: "中国矿业大学（北京）"
-author: "黄湘云"
-date: "`r Sys.Date()`"
 documentclass: ctexbook
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
-classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3"
+classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3, notitlepage"
 bibliography: [refer.bib]
 natbiboptions: super,square
 biblio-style: natbib
