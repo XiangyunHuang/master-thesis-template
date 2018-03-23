@@ -1,7 +1,56 @@
-# 论文综述 {#intro}
-
-
-# 模型介绍 {#models}
+# 模型 {#models}
 
 ## 线性模型  
+
+线性模型的一般形式为
+\begin{equation}
+Y = X'\beta + \epsilon, \mathrm{E}(\epsilon) = 0, \mathrm{Cov}(\epsilon) = \sigma^2I \label{eq:LM}
+\end{equation}
+其中，$Y = (y_1,y_2,\cdots,y_n)'$ 是 $n$ 维列向量，代表对响应变量$Y$的$n$次重复观测；$\beta = (\beta_0,\beta_1,\cdots,\beta_{p-1})'$ 是 $p$ 维列向量，代表模型自变量 $X$ 的系数，$\beta_0$是截距项；
+$X' = (1_{(1\times n)}',X_{(1)}',X_{(2)}',\cdots,X_{(n)}')$，$1_{(1\times n)}'$ 是全1的$n$维列向量，而$X_{(i)}' = (x_{1i},x_{2i},\cdots,x_{ni})'$ 代表对第$i$个自变量的$n$次观测；
+$\epsilon = (\epsilon_1,\epsilon_2,\cdots,\epsilon_n)'$是$n$ 维列向量，代表模型的随机误差，$\mathrm{E}(\epsilon_i \epsilon_j) = 0, i \ne j$。 求解线性模型 \eqref{eq:LM} 的 R 函数是 `lm`，近年来，高维乃至超高维稀疏线性模型成为热门的研究方向，相关的 R 包也越来越多，比较著名的有`glmnet`[@glmnet2011JSS] 和 `SIS`[@SIS2016JSS]。
+
+
+## 广义线性模型
+
+广义线性模型的一般形式
+\begin{equation}
+Y \sim \text{指数族} \quad
+\eta = X'\beta \quad
+\mathrm{E}(Y) = g^{-1}(\eta)  \label{eq:GLM}
+\end{equation}
+简写之为
+\begin{equation*}
+g(\mu) = X'\beta
+\end{equation*}
+其中$\mu \equiv \mathrm{E}(Y)$， $g$ 代表联系函数，特别地，当 $Y \sim N(\mu,\sigma^2)$ 时，$g(x) = x$ ；当 $Y \sim \mathrm{Binomial}(n,p)$ 时，$g(x)=\ln(\frac{x}{1-x})$；当 $Y \sim \mathrm{Possion}(\lambda)$ 时，$g(x) = \ln(x)$；此处不一一列举。[@McCullagh1989] 
+模型\eqref{eq:GLM}最早由 Nelder 和 Wedderburn [@Nelder1972]提出，它弥补了模型\eqref{eq:LM} 的两个重要缺点：一是因变量只能取连续值的情况，二是期望与自变量只能用线性关系联系 [@Chen2011]。求解广义线性模型 \eqref{eq:GLM} 的 R 函数是 `glm`，参数估计的办法一般是拟似然法。
+
+## 混合效应模型  
+
+广义线性混合模型的一般形式
+\begin{equation}
+g(\mu) = X'\beta + Z'b  \label{eq:GLMM}
+\end{equation}
+其中 $Z'$ 是$q$维随机效应的 $n \times q$ 的向量值矩阵。
+混合效应模型包含线性混合效应模型、广义线性混合效应模型、非线性混合效应模型等，之所以称之为混合效应，是因为模型既包含固定效应(fixed-effects)又随机效应(random effects)。如前所述的线性和广义线性模型中的自变量就是固定效应，而随机效应是那些不能直接观察到的潜变量。求解模型\eqref{eq:GLMM}的R 包有 `nlme` [@R-nlme]，`mgcv` [@mgcv2017] 和`lme4`[@lme4JSS]，参数估计的方法一般有限制极大似然法。
+
+在 S/R 语言中空间数据分析和建模，包括空间插值和平滑以及克里金方法等，此外，还介绍了线性和混合线性模型，广义线性和广义线性模型混合的求解方法与软件实现[@MASS2002]。
+
+## 空间广义线性混合效应模型
+
+本文重点关注空间广义线性混合效应模型(Spatial Generalized linear mixed-effects models，简写为SGLMM)，顾名思义，它既是对模型\eqref{eq:LM}、\eqref{eq:GLM}和\eqref{eq:GLMM}的延伸也是对空间数据分析的应用，属于空间统计下的地统计(geostatistics)分支，因此在有些参考文献中也称为广义线性地统计模型(Generalized linear geostatistical models)[@Diggle2007]。
+
+\begin{equation}
+g(\mu_i) = d(x_i)'\beta + S(x_i) + Z_i \label{eq:SGLMM}
+\end{equation}
+其中$d'(x_i)$代表协变量对应的数据向量，$x_i \in \mathbb{R}^2$ 代表相应的空间位置，即 $p$ 个协变量在第 $i$ 个位置的观察值。若响应变量$Y_i$服从二项分布$\mathrm{Bin}(n_i,p_i)$则 $g(\mu_i) = \log[p(x_i)/\{1-p(x_i)\}]$，若响应变量$Y_i$服从泊松分布$\mathrm{Pois}(\lambda_i)$则 $g(\mu_i) = \log(\lambda_i)$。
+
+2002年张重点分析了模型\eqref{eq:SGLMM}的参数估计和模型预测的计算问题，提出MCML[@Zhang2002On]，2004年Christensen 将 MCML 方法应用于 Rongelap 数据分析[@Christensen2004]，2016年 Bonat 和 Ribeiro Jr. 综合比较了MCML、贝叶斯MCMC和INLA方法[@Bonat2016Practical]
+
+模型\eqref{eq:SGLMM}具有广泛的应用，如分析核污染浓度的空间分布[@Diggle1998]，冈比亚儿童的疟疾流行度的空间分布估计和预测[@Diggle2002]，喀麦隆及其周边地区的热带眼线虫流行病的的空间分布的估计和预测[@Diggle2007ATMP]，以及对LFOEP项目（即Lymphatic Filariasis and Onchocerciasis Elimination Programs）的决策支持[@Schl2016Using]，Diggle 和 Giorgi 于2016年在SGLMM模型的基础上进行扩展，以适应三类新的调查数据，其一是组合随机调查数据和非随机调查数据（即潜在有偏的数据），以肯尼亚疟疾流行数据为例，组合了学校和社区的调查数据；其二是时空扩展，将时间因素考虑进模型，以马拉维2010年5月至2013年6月的疟疾流行数据为例；其三是混合分布，考虑响应变量 是混合二项分布的情况[@Diggle2016]，检验环境和基因效应在空间相关性中的存在性 [@spaMM2014]，流行现象的时空分析[@surveillance2017]，近年来涉及空间数据分析和建模的书籍也越来越多，用于空间数据分析的分层模型[@Banerjee2015]和基于 `R-INLA` 软件的空间和时空贝叶斯模型 [@Blangiardo2015]
+
+作为模型\eqref{eq:SGLMM}求解和展示的首选工具 --- R 语言在空间数据分析与可视化方面呈现越来越流行的趋势，从早些年的 `lattice` 图形[@lattice2008] 到如今的 `ggplot2`图形[@ggplot22016]，操作空间数据的 `sp` 对象也发展为 `sf` 对象，同时整合了不少第三方软件和服务 如基于 Google Maps 的交互空间可视化 [@plotGoogleMaps2012]，基于 Google Earth 的空间可视化 [@plotKML2015] 
+
+下面就求解模型\eqref{eq:SGLMM}的三类算法进行详细阐述，并介绍相应的软件实现。
 
