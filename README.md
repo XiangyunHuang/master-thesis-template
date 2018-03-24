@@ -5,10 +5,38 @@
 
 ---
 
-## 中国矿业大学（北京）硕士学位论文模板
+# 中国矿业大学（北京）硕士学位论文模板
 
 - 这是一个用 **bookdown** 写论文模板的例子。在使用它之前，建议您至少泛读一遍 [**bookdown** 官方文档](https://bookdown.org/yihui/bookdown)。
 - 论文模板源文件放在本仓库，基于 [netlify](https://www.netlify.com/) 部署，可以 [在线预览](https://cumtb-thesis-template.netlify.com/)，模板的PDF输出文件[见此](https://cumtb-thesis-template.netlify.com/master-thesis-template.pdf)
 - 使用之前请仔细阅读[模板说明](https://cumtb-thesis-template.netlify.com/)
-- development 分支使用 pandoc 提供的 latex 模板，采用 pdflatex 编译引擎，没办法，学校奇葩的参考文献引用样式只有（此处有个麻烦）上 pdflatex，又要使用中文，所以只有在windows 下编译，编译完由 bookdown 本地编译后推 bookdown.org
-- master 分支是稳定分支，使用修改的 rticles 模板，xelatex 编译方式，由 travis-ci 推 netlify 部署，建议大家使用
+
+# 本地编译流程
+
+## 先启动 Docker 
+
+```
+docker run --name rocker -d -p 8787:8787 -e ROOT=TRUE \
+> -e USER=xiangyun -e PASSWORD=cloud rocker/geospatial
+docker start rocker
+```
+
+## 克隆本 repo
+
+```
+git clone --depth=50 --branch=master https://github.com/XiangyunHuang/master-thesis-template.git master-thesis-template
+git submodule update --init --recursive
+```
+
+
+## 编译文档需要的 R 包
+
+```r
+install.packages(c("ggExtra","showtext"))
+```
+
+## 编译 PDF 文档需要的 TeX 包
+
+```bash
+tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
+```
