@@ -7,7 +7,7 @@ cache:
   - $HOME/.npm
   - $HOME/texlive
 
-pandoc_version: 2.1.1
+pandoc_version: 2.1.3
 
 addons:
   apt:
@@ -18,8 +18,8 @@ addons:
 before_install:
   - npm install netlify-cli -g
   - tlmgr update --all --self
-  - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math 
-  
+  - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
+
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
 
