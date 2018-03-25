@@ -3,7 +3,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><strong><a href="./">CUMTB Master Thesis</a></strong></li>
+        <li><strong><a href="./">硕士学位论文</a></strong></li>
     edit:
       link: https://github.com/XiangyunHuang/master-thesis-template/edit/master/%s
       text: "Edit"
