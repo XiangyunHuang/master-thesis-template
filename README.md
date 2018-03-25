@@ -15,10 +15,9 @@
 
 ## 先启动 Docker 
 
-```
+```bash
 docker run --name rocker -d -p 8787:8787 -e ROOT=TRUE \
-> -e USER=xiangyun -e PASSWORD=cloud rocker/geospatial
-docker start rocker
+> -e USER=rstudio -e PASSWORD=cloud rocker/geospatial
 ```
 
 ## 克隆本 repo
@@ -36,6 +35,11 @@ git config --global user.name "用户名"
 touch .git-credentials
 echo "https://username:password@github.com" >> .git-credentials
 git config --global credential.helper store
+```
+
+## 配置 oh-my-zsh
+
+```
 sudo apt update && sudo apt install zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
