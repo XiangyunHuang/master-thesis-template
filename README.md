@@ -17,14 +17,13 @@
 
 ```bash
 docker run --name rocker -d -p 8787:8787 -e ROOT=TRUE \
-> -e USER=rstudio -e PASSWORD=cloud rocker/geospatial
+ -e USER=rstudio -e PASSWORD=cloud rocker/geospatial
 ```
 
 ## 克隆本 repo
 
-```
-git clone --depth=50 --branch=master https://github.com/XiangyunHuang/master-thesis-template.git master-thesis-template
-git submodule update --init --recursive
+```bash
+git clone --recursive git@github.com:XiangyunHuang/master-thesis-template.git
 ```
 
 ## 配置 Git
