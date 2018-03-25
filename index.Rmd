@@ -62,7 +62,7 @@ $$\mathsf{A} = \varGamma^\top\Lambda\varGamma$$
 $$\mathsf{u} = (u_1,u_2,\cdots,u_n)$$
 $$\mathsf{x} = (x_1,x_2,\cdots,x_n)$$
 期望 $\mathsf{E}$ 正态分布 $\mathcal{N}(\mathsf{x};\mu,\Sigma)$
-对数 $\mathsf{\log}$ 协方差 $\mathsf{Cov},\mathsf{Var}$ 
+对数 $\log$ 协方差 $\mathsf{Cov},\mathsf{Var}$ 
 
 矩阵 $$\mathsf{Y} = (\mathsf{y}^{(1)},\mathsf{y}^{(n)},\cdots,\mathsf{y}^{(n)})$$
 其中 $\mathsf{y}^{(i)} = (y_{1i},y_{2i},\cdots,y_{ni})$ 表示第 $i$ 列
@@ -70,4 +70,10 @@ $$\mathsf{x} = (x_1,x_2,\cdots,x_n)$$
 梅隆函数(Matern function)是描述空间相关性的常用函数，它带有两参数$\kappa$ 和 $\phi$，具体形式如下：
 $$\rho(u) = \big\{2^{\kappa-1}\Gamma(\kappa)\big\}^{-1}(u/\phi)^{\kappa}K_{\kappa}(u/\phi)$$
 其中，$K_{\kappa}(\cdot)$ 表示 $\kappa$ 阶修正的贝塞尔函数
+
+- 向量 `\mathsf` $\mathsf{x} = (x_1,x_2,\cdots,x_n)$ 此处 $\mathsf{x}$ 是小写
+- 矩阵 `\mathbf` 矩阵的向量表示，$\mathsf{X} = (\mathsf{x}^{(1)},\mathsf{x}^{(2)},\cdots,\mathsf{x}^{(n)})$ 此处 $\mathsf{X}$ 是大写，矩阵的元素表示 $\mathsf{X} = (x_{ij})_{n\times p}$
+
+
+> 先不要管符号说明，把后续模型方程写完了再说
 
