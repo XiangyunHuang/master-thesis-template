@@ -28,6 +28,17 @@ git clone --depth=50 --branch=master https://github.com/XiangyunHuang/master-the
 git submodule update --init --recursive
 ```
 
+## 配置 Git
+
+```bash
+git config --global user.email "邮箱"
+git config --global user.name "用户名"
+touch .git-credentials
+echo "https://username:password@github.com" >> .git-credentials
+git config --global credential.helper store
+sudo apt update && sudo apt install zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
 
 ## 编译文档需要的 R 包
 
