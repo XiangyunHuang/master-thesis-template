@@ -38,7 +38,7 @@ git config --global credential.helper store
 
 ## 配置 oh-my-zsh
 
-```
+```bash
 sudo apt update && sudo apt install zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
@@ -54,9 +54,7 @@ install.packages(c("ggExtra","showtext"))
 先选一个就近的 CTAN 镜像，如清华
 
 ```r
-tinytex::tlmgr(
-c('option', 'repository', 'https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet')
-)
+tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
 ```
 
 然后安装额外的 TeX 包，这样就可以大大加快下载时间
