@@ -26,7 +26,7 @@ docker run --name rocker -d -p 8787:8787 -e ROOT=TRUE \
 git clone --recursive git@github.com:XiangyunHuang/master-thesis-template.git
 ```
 
-## 配置 Git
+## 配置 Git (optional)
 
 ```bash
 git config --global user.email "邮箱"
@@ -36,14 +36,14 @@ echo "https://username:password@github.com" >> .git-credentials
 git config --global credential.helper store
 ```
 
-## 配置 oh-my-zsh
+## 配置 oh-my-zsh (optional)
 
 ```bash
 sudo apt update && sudo apt install zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
-## 编译文档需要的 R 包
+## 编译文档需要的 R 包 （可选）
 
 ```r
 install.packages(c("ggExtra","showtext"))
