@@ -8,7 +8,6 @@
 
 - 这是一个用 **bookdown** 写论文模板的例子。在使用它之前，建议您至少泛读一遍 [**bookdown** 官方文档](https://bookdown.org/yihui/bookdown)。
 - 论文模板源文件放在本仓库，基于 [netlify](https://www.netlify.com/) 部署，可以 [在线预览](https://cumtb-thesis-template.netlify.com/)，模板的PDF输出文件[见此](https://cumtb-thesis-template.netlify.com/master-thesis-template.pdf)
-- 使用之前请仔细阅读[模板说明](https://cumtb-thesis-template.netlify.com/)
 
 # 本地编译流程
 
@@ -61,13 +60,3 @@ tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texliv
 ```bash
 tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
 ```
-
-# 容器化 to-do
-
-- liftr <https://liftr.me/> 
-
-> 对于学位论文来说，不需要这个东西，因为不需要部署出去呀！我只需要愉快地编辑，并且出来结果。由于涉及到排版，后期需要精调格式，使用 Docker Hub 自动编译就显得多余，在这里不太合适，而且 liftr 在这里干的事和 Travis-CI 一样，继续封装对初学者来说，前路黑洞洞一片。
-
-> 如果是日志分析做运维，写好 R Markdown 模板，设置定时任务，自动出报告，应该很赞！因为这个报告大部分应该是保持不变的，Docker 一直跑在服务器上
-
-> 如果有台可以一直运行的服务器，完全可以写一小段 Shell 脚本，去调用 R 执行编译过程，也可使用定时任务 cron
