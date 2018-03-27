@@ -16,9 +16,17 @@ colorlinks: yes
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
-                      fig.showtext = TRUE,
-                      out.width = '.7\\textwidth')
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  echo = FALSE,
+  # cache = TRUE,
+  out.width = "70%",
+  fig.align = 'center',
+  fig.width = 6,
+  fig.asp = 0.618,  # 1 / phi
+  fig.show = "hold"
+)
 library(ggplot2)
 theme_set(theme_minimal())
 ```
