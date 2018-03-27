@@ -34,8 +34,21 @@ $\sigma^2 = 1, \phi = 0.15, \kappa =  2$，块金效应 (nugget effect) $\tau^2 
 
 
 ```{r low-rank,fig.cap="数值模拟",fig.pos="!htb"}
-knitr::include_graphics("figures/simulation.pdf")
+knitr::include_graphics(rep("figures/simulation.pdf",2))
 ```
+
+
+```{r cumtb-demo,fig.cap=c("CUMTB1","CUMTB2","CUMTB3"), out.width='33%'}
+knitr::include_graphics(rep("figures/cumtb.pdf",3))
+```
+
+
+```{r two-figures, fig.cap="两个图并排", out.width='50%'}
+par(mar = c(4, 4, 0.1, 0.1))
+plot(pressure, pch = 19, type = "b")
+plot(cars, pch = 19)
+```
+
 
 # 案例分析 {#cases}
 
