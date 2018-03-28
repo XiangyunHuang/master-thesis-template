@@ -1,7 +1,13 @@
+% Times New Roman
+% \setmainfont{Nimbus Roman No9 L}
+
 %% 数学字体
 \usepackage{amsmath}
 \usepackage{amsfonts} % \mathbb \mathfrak
 \usepackage{mathrsfs} % \mathscr
+
+\usepackage[OT1]{fontenc}
+\usepackage{mathptmx}
 
 %% 章节标题数字样式
 \ctexset{
@@ -16,7 +22,7 @@
   section/format += \sf\zihao{4}\raggedright, % 二级标题
   subsection/numberformat = \rm,   
   subsection/format += \sf\zihao{-4}\raggedright,  % 三级标题
-  contentsname = {目\quad 录},
+  % contentsname = {目\quad 录},
 }
 
 %% 段首缩进40点 即两个汉字
