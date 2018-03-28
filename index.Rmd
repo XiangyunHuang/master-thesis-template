@@ -20,10 +20,10 @@ knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
   echo = FALSE,
-  # cache = TRUE,
   out.width = "70%",
   fig.align = 'center',
   fig.width = 6,
+  fig.showtext = TRUE,
   fig.asp = 0.618,  # 1 / phi
   fig.show = "hold"
 )
@@ -38,11 +38,12 @@ theme_set(theme_minimal())
 符号   | 含义             | 符号  | 含义
  :---: |   :----------:   | :---: |  :----------: 
 $\mathbf{A}$               | 粗体            | $\Omega$                   | 全集
-$\mathit{A}$               | 集合            | $\mathbb{R,C}$             | 实（复）数集
+$\mathit{A}$               | 集合 文本斜体            | $\mathbb{R,C}$             | 实（复）数集
+$\mathtt{A}$               | 文本等宽体      | $\mathrm{A}$  | 文本罗马体
 $\mathcal{A}$              | 集族            | $\varnothing$               | 空集
-$\mathsf{A}$               | 矩阵            | $\mathsf{A}^{-}$            | 矩阵的广义逆
+$\mathsf{A}$               | 矩阵 文本等线体  | $\mathsf{A}^{-}$            | 矩阵的广义逆
 $\mathsf{A}^\top$          | 矩阵转置        | $\bar{x}$                   | 平均值
-$\mathsf{A}^\mathrm{-1}$   | 矩阵的逆        | $\vert a \vert$             | 标量绝对值
+$\mathsf{A}^{-1}$   | 矩阵的逆        | $\vert a \vert$             | 标量绝对值
 $\mathsf{A}^{\star}$       | 伴随矩阵        | $\mathop{\mathrm{diag}}(\mathsf{A})$ | 矩阵的对角
 $\lVert \mathsf{A} \rVert_{1}$       | 矩阵的1范数     | $\mathsf{I}$                | 单位矩阵
 $\lVert \mathsf{A} \rVert_{2}$       | 矩阵的2范数     | $\mathsf{I}_{n}$            | $n$ 阶单位矩阵
