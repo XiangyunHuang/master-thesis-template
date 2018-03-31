@@ -6,16 +6,18 @@ cache:
   - _bookdown_files
   - $HOME/.npm
   - $HOME/texlive
+  - $HOME/.fonts
 
-pandoc_version: 2.1.2
+pandoc_version: 2.1.3
 
 addons:
   apt:
     packages:
       - ghostscript
-      - fonts-liberation
-      
+
 before_install:
+  - cp -r WinFonts/* $HOME/.fonts/
+  - fc-cache -v -f
   - npm install netlify-cli -g
   - tlmgr update --all --self
   - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
