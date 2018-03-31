@@ -16,4 +16,5 @@ Imports:
     rticles,
     mapdata,
     mapproj,
+    svglite,
     gridExtra

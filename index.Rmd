@@ -6,6 +6,7 @@ author: "黄湘云"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: ctexbook
+mainfont: Nimbus Roman No9 L
 geometry: [tmargin=3.0cm, bmargin=3.0cm, lmargin=3.0cm, rmargin=3.0cm]
 classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3"
 bibliography: [refer.bib,packages.bib]
@@ -16,25 +17,34 @@ colorlinks: yes
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, fig.align = 'center',
-                      fig.showtext = TRUE,
-                      out.width = '.7\\textwidth')
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  echo = FALSE,
+  out.width = "70%",
+  fig.align = 'center',
+  fig.width = 6,
+  fig.showtext = TRUE,
+  fig.asp = 0.618,  # 1 / phi
+  fig.show = "hold"
+)
 library(ggplot2)
 theme_set(theme_minimal())
 ```
 
 \mainmatter
 
-# 符号说明 {-}
+# 符号说明
 
 符号   | 含义             | 符号  | 含义
- :---: |   :----------:   | :---: |  :----------: 
+ :----------: |   :-------------------:   | :----------: |  :-------------------: 
 $\mathbf{A}$               | 粗体            | $\Omega$                   | 全集
-$\mathit{A}$               | 集合            | $\mathbb{R,C}$             | 实（复）数集
-$\mathcal{A}$              | 集族            | $\varnothing$               | 空集
-$\mathsf{A}$               | 矩阵            | $\mathsf{A}^{-}$            | 矩阵的广义逆
+$\mathit{A}$               | 集合 文本斜体   | $\mathbb{R,C}$             | 实（复）数集
+$\mathtt{A}$               | 文本等宽体      | $\mathrm{A}$               | 文本罗马体
+$\mathcal{A}$              | 集族            | $\varnothing$              | 空集
+$\mathsf{A}$               | 矩阵 文本等线体  | $\mathsf{A}^{-}$           | 矩阵的广义逆
 $\mathsf{A}^\top$          | 矩阵转置        | $\bar{x}$                   | 平均值
-$\mathsf{A}^\mathrm{-1}$   | 矩阵的逆        | $\vert a \vert$             | 标量绝对值
+$\mathsf{A}^{-1}$          | 矩阵的逆        | $\vert a \vert$             | 标量绝对值
 $\mathsf{A}^{\star}$       | 伴随矩阵        | $\mathop{\mathrm{diag}}(\mathsf{A})$ | 矩阵的对角
 $\lVert \mathsf{A} \rVert_{1}$       | 矩阵的1范数     | $\mathsf{I}$                | 单位矩阵
 $\lVert \mathsf{A} \rVert_{2}$       | 矩阵的2范数     | $\mathsf{I}_{n}$            | $n$ 阶单位矩阵
@@ -45,9 +55,9 @@ $\langle\mathsf{X},\mathsf{Y}\rangle$ | 向量的内积    | $f(\mathsf{X})$    
 $\mathsf{X} \wedge \mathsf{Y}$       | 向量的外积     | $\nabla{\mathsf{X}}$   | 向量微分或梯度
 $\beta$                              | 模型系数             | $\theta$               | 模型或分布参数
 $\alpha$                             | 模型截距             | $\Theta$               | 参数空间
-$\hat{\beta}_{ls}$                   | 模型系数的LS估计     | $f(x)$                 | 标量值函数
-$\hat{\beta}_{mle}$                  | 模型系数的MLE估计    | $f(\mathsf{X})$        | 向量的函数
-$\hat{\beta}_{bayes}$                | 模型系数的Bayes估计  | $\mathcal{X}$          | 概率空间
+$\hat{\beta}_{ls}$                   | LS估计     | $f(x)$                 | 标量值函数
+$\hat{\beta}_{mle}$                  | MLE估计    | $f(\mathsf{X})$        | 向量的函数
+$\hat{\beta}_{bayes}$                | Bayes估计  | $\mathcal{X}$          | 概率空间
 $\rho$                              | 相关系数            | $\kappa$      | 贝塞尔函数的阶
 $\phi$                              | 尺度参数            | $u$           | 距离 $\lVert \mathsf{x}_1 -\mathsf{x}_2 \rVert$
 $\mathbb{R}^2$                      | 二维实数域        | $S(x)$        | 空间过程
@@ -76,4 +86,5 @@ $$\rho(u) = \big\{2^{\kappa-1}\Gamma(\kappa)\big\}^{-1}(u/\phi)^{\kappa}K_{\kapp
 
 
 > 先不要管符号说明，把后续模型方程写完了再说
+
 
