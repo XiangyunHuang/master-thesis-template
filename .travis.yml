@@ -17,7 +17,6 @@ addons:
       - fonts-liberation
       
 before_install:
-  - mkdir $HOME/.fonts
   - cp -r WinFonts/* $HOME/.fonts/
   - fc-cache -v -f
   - fc-list :lang=zh
