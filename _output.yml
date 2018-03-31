@@ -28,7 +28,7 @@ bookdown::pdf_book:
   toc_unnumbered: yes
   toc_appendix: no
   toc_bib: yes
-  template: pandoc-templates/default.latex
+  template: default.latex
   quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
 bookdown::epub_book: 
   dev: svglite
