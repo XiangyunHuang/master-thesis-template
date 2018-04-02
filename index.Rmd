@@ -1,8 +1,8 @@
 --- 
-title: "空间广义线性混合效应模型及其应用"
-subtitle: "理学院2015级硕士学位论文"
-institute: "中国矿业大学（北京）"
-author: "黄湘云"
+title: "Spatial Generalized Linear Mixed Models and its Applications"
+subtitle: "master thesis template"
+institute: "China University of Mining and Technology, Beijing"
+author: "Xiangyun Huang"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: ctexbook
