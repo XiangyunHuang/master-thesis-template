@@ -20,7 +20,7 @@ before_install:
   - fc-cache -v -f
   - npm install netlify-cli -g
   - tlmgr update --all --self
-  - tlmgr install ctex xecjk zhnumber fandol filehook lm-math unicode-math
+  - tlmgr install $(cat TeXLive.Pkgs | tr '\n' ' ') || true
 
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
