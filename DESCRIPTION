@@ -5,14 +5,7 @@ Authors@R: c(
   person("Xiangyun", "Huang", , "xiangyunfaith@outlook.com", c("aut", "cre"))
   )
 Maintainer: Xiangyun Huang <xiangyunfaith@outlook.com>
-Description: 'Slack' <http://slack.com/> provides a service for teams to
-    collaborate by sharing messages, images, links, files and more. Functions are provided
-    that make it possible to interact with the 'Slack' platform 'API'. When
-    you need to share information or data from R, rather than resort to copy/
-    paste in e-mails or other services like 'Skype' <http://www.skype.com/>, you
-    can use this package to send well-formatted output from multiple R objects and
-    expressions to all teammates at the same time with little effort. You can also
-    send images from the current graphics device, R objects, and upload files.
+Description: master thesis template of China University of Mining and Technology, Beijing
 URL: https://github.com/XiangyunHuang/master-thesis-template
 BugReports: https://github.com/XiangyunHuang/master-thesis-template/issues
 License: MIT + file LICENSE
