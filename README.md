@@ -23,7 +23,7 @@ docker run --name rocker -d -p 8787:8787 -e ROOT=TRUE \
 ## 克隆本 repo
 
 ```bash
-git clone --recursive git@github.com:XiangyunHuang/master-thesis-template.git
+git clone --depth=1 --branch=master --recursive git@github.com:XiangyunHuang/master-thesis-template.git
 ```
 
 ## 配置 Git (optional)
