@@ -15,7 +15,6 @@ bibliography: [refer.bib,packages.bib]
 natbiboptions: super,square
 biblio-style: natbib
 link-citations: yes
-colorlinks: yes
 ---
 
 ```{r setup,include=FALSE}
