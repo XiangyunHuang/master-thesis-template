@@ -36,10 +36,10 @@ $if(mathspec)$
   \ifxetex
     \usepackage{mathspec}
   \else
-    \usepackage{unicode-math}
+%    \usepackage{unicode-math}
   \fi
 $else$
-  \usepackage{unicode-math}
+%  \usepackage{unicode-math}
 $endif$
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 $for(fontfamilies)$
